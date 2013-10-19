@@ -3,8 +3,6 @@ var dd;
     (function (model) {
         var BaseDataManager = (function () {
             function BaseDataManager() {
-                console.log("TEST");
-
                 var hello = $("<div>HELLO WORLD</div>");
                 $("body").append(hello);
             }
