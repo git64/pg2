@@ -1,6 +1,11 @@
-module danndann.model {
+module dd.model {
     export class BaseDataManager {
         constructor() {
+
+        
+           // $.
+            
+
         }
     }
 }
