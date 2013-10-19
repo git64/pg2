@@ -1,0 +1,1 @@
+/// <reference path="danndann/model/BaseDataManager.ts" />

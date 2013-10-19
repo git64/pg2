@@ -5,7 +5,35 @@
 	<projects>
 	</projects>
 	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.dltk.core.scriptbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.palantir.typescript.typeScriptBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.palantir.typescript.typeScriptNature</nature>
+		<nature>org.eclipse.php.core.PHPNature</nature>
 	</natures>
+	<filteredResources>
+		<filter>
+			<id>1382218476710</id>
+			<name></name>
+			<type>22</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-location-matches-false-true-.*danndann[\/\\]ts.*\.ts</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 </projectDescription>
