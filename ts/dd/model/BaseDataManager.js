@@ -3,7 +3,8 @@ var dd;
     (function (model) {
         var BaseDataManager = (function () {
             function BaseDataManager() {
-                var hello = $("<div>HELLO WORLD</div>");
+                var hello = $("<div id='tButton' style='height:200px;width:100%;background-color:#E0E0E0;'>HELLO WORLD</div>");
+
                 $("body").append(hello);
             }
             return BaseDataManager;
@@ -15,4 +16,8 @@ var dd;
 
 $(window).ready(function () {
     new dd.model.BaseDataManager();
+
+    $("#tButton").click(function () {
+        $("#tButton").hide();
+    });
 });
