@@ -1,0 +1,13 @@
+.notification {
+	width: 100%;
+	height: 30px;
+	line-height: 20px;
+	background-color: #666666;
+	padding: 5px 10px;
+	color: #FFFFFF;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+	background-image: url(../assets/notificaton-close.png);
+	background-size: 20px;
+	background-position: right 5px center;
+	cursor: pointer;
+}

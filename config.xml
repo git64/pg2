@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0"
+	id="com.gavyn-mckenzie.example.app" version="1.0.0">
+	<name>DannDann</name>
+	<description>DannDann</description>
+	<author href="http://danndann.github.com" email="DannDann@github.com">DannDann
+	</author>
+	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
+	<feature name="http://api.phonegap.com/1.0/camera" />
+	<!-- <feature name="http://api.phonegap.com/1.0/contacts" /> -->
+	<!-- <feature name="http://api.phonegap.com/1.0/file" /> -->
+	<!-- <feature name="http://api.phonegap.com/1.0/geolocation" /> -->
+	<!-- <feature name="http://api.phonegap.com/1.0/media" /> -->
+	<!-- <feature name="http://api.phonegap.com/1.0/network" /> -->
+	<!-- <feature name="http://api.phonegap.com/1.0/notification" /> -->
+</widget>
