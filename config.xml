@@ -5,6 +5,8 @@
 	<description>DannDann</description>
 	<author href="http://danndann.github.com" email="DannDann@github.com">DannDann
 	</author>
+	<access origin="*" />
+	<feature name="http://api.phonegap.com/1.0/device" />
 	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
 	<feature name="http://api.phonegap.com/1.0/camera" />
 	<!-- <feature name="http://api.phonegap.com/1.0/contacts" /> -->
