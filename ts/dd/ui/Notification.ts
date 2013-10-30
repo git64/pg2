@@ -15,6 +15,7 @@ module dd.ui {
 
         private handleClick(evt: any): boolean {
             this.element.slideUp(300, function() { $(this).remove(); });
+            evt.stopPropagation();
             return false;
         }
     }

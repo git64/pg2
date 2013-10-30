@@ -27,6 +27,7 @@ var dd;
                 this.element.slideUp(300, function () {
                     $(this).remove();
                 });
+                evt.stopPropagation();
                 return false;
             };
             return Notification;
