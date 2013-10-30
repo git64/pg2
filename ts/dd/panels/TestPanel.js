@@ -27,7 +27,7 @@ var dd;
                 }, function (msg) {
                     return _this.onFail(msg);
                 }, {
-                    quality: 50,
+                    quality: 30,
                     destinationType: 0
                 });
             };

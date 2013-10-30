@@ -17,7 +17,7 @@ module dd.panels {
                 (img: any) => this.onSuccess(img),
                 (msg: string) => this.onFail(msg),
                 {
-                    quality: 50,
+                    quality: 30,
                     destinationType: 0//Camera.DestinationType.DATA_URL
                 });
         }
