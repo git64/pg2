@@ -2,10 +2,14 @@ var dd;
 (function (dd) {
     var Application = (function () {
         function Application() {
+            var _this = this;
             //            if (!navigator.device)
             //                document.addEventListener("deviceready", () => this.handleDeviceReady());
             //            else
-            this.handleDeviceReady();
+            //                this.handleDeviceReady();
+            setTimeout(function () {
+                return _this.handleDeviceReady;
+            }, 5000);
         }
         Application.prototype.handleDeviceReady = function () {
             if ($("#test-panel").length > 0)

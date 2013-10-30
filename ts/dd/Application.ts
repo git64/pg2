@@ -4,7 +4,8 @@ module dd {
 //            if (!navigator.device)
 //                document.addEventListener("deviceready", () => this.handleDeviceReady());
 //            else
-                this.handleDeviceReady();
+//                this.handleDeviceReady();
+            setTimeout(() => this.handleDeviceReady, 5000);
         }
 
         private handleDeviceReady(): void {
