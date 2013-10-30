@@ -32,8 +32,7 @@ var dd;
                     return _this.onFail(msg);
                 }, {
                     quality: 30,
-                    targetWidth: 600,
-                    targetHeight: 600,
+                    targetWidth: 400,
                     sourceType: 1,
                     destinationType: 1,
                     saveToPhotoAlbum: false

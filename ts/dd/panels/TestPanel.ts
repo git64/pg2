@@ -19,8 +19,7 @@ module dd.panels {
                 (msg: string) => this.onFail(msg),
                 {
                     quality: 30,
-                    targetWidth: 600,
-                    targetHeight: 600,
+                    targetWidth: 400,
                     sourceType : 1,//Camera.PictureSourceType.CAMERA, 
                     destinationType: 1,//Camera.DestinationType.DATA_URL:0, Camera.DestinationType.FILE_URI:1
                     saveToPhotoAlbum: false
