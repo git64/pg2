@@ -35,7 +35,7 @@ var dd;
                     targetWidth: 600,
                     targetHeight: 600,
                     sourceType: 1,
-                    destinationType: 0,
+                    destinationType: 1,
                     saveToPhotoAlbum: false
                 });
             };
