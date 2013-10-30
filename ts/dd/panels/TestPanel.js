@@ -28,7 +28,11 @@ var dd;
                     return _this.onFail(msg);
                 }, {
                     quality: 30,
-                    destinationType: 0
+                    targetWidth: 600,
+                    targetHeight: 600,
+                    sourceType: 1,
+                    destinationType: 0,
+                    saveToPhotoAlbum: false
                 });
             };
 

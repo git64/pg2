@@ -3,13 +3,12 @@ var dd;
     var Application = (function () {
         function Application() {
             var _this = this;
-            if (!isDeviceReady)
+            if (isDeviceReady)
                 document.addEventListener("deviceready", function () {
                     return _this.handleDeviceReady();
                 });
 else
                 this.handleDeviceReady();
-            //setTimeout(() => this.handleDeviceReady(), 10000);
         }
         Application.prototype.handleDeviceReady = function () {
             if ($("#test-panel").length > 0)

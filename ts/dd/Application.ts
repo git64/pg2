@@ -3,11 +3,10 @@ declare var isDeviceReady:boolean;
 module dd {
     export class Application {
         constructor() {
-            if (!isDeviceReady)
+            if (isDeviceReady)
                 document.addEventListener("deviceready", () => this.handleDeviceReady());
             else
                 this.handleDeviceReady();
-            //setTimeout(() => this.handleDeviceReady(), 10000);
         }
 
         private handleDeviceReady(): void {
