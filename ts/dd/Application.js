@@ -9,7 +9,7 @@ var dd;
             //                this.handleDeviceReady();
             setTimeout(function () {
                 return _this.handleDeviceReady();
-            }, 4000);
+            }, 10000);
         }
         Application.prototype.handleDeviceReady = function () {
             if ($("#test-panel").length > 0)
