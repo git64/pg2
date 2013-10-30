@@ -3,6 +3,7 @@ module dd.panels {
         constructor() {
             super();
 
+            this.notify("Device is Ready? : " + isDeviceReady);
             this.takePicture();
         }
 

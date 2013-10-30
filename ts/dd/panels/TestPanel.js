@@ -12,6 +12,7 @@ var dd;
             function TestPanel() {
                 _super.call(this);
 
+                this.notify("Device is Ready? : " + isDeviceReady);
                 this.takePicture();
             }
             TestPanel.prototype.takePicture = function () {

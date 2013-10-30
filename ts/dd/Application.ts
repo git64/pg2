@@ -1,3 +1,5 @@
+declare var isDeviceReady:boolean;
+
 module dd {
     export class Application {
         constructor() {
