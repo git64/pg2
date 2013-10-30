@@ -13,8 +13,9 @@ module dd.ui {
             return msg;
         }
 
-        private handleClick(evt: any): void {
+        private handleClick(evt: any): boolean {
             this.element.slideUp(300, function() { $(this).remove(); });
+            return false;
         }
     }
 }
