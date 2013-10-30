@@ -12,7 +12,6 @@ var dd;
             function TestPanel() {
                 _super.call(this);
 
-                this.notify("take a picture");
                 this.takePicture();
             }
             TestPanel.prototype.takePicture = function () {
@@ -21,6 +20,8 @@ var dd;
                     this.notify("No camera found on navigator");
                     return;
                 }
+
+                this.notify("Try to take a picture");
                 navigator.camera.getPicture(function (img) {
                     return _this.onSuccess(img);
                 }, function (msg) {

@@ -3,7 +3,6 @@ module dd.panels {
         constructor() {
             super();
 
-            this.notify("take a picture");
             this.takePicture();
         }
 
@@ -12,6 +11,8 @@ module dd.panels {
                 this.notify("No camera found on navigator");
                 return;
             }
+            
+            this.notify("Try to take a picture");
             navigator.camera.getPicture(
                 (img: any) => this.onSuccess(img),
                 (msg: string) => this.onFail(msg),
