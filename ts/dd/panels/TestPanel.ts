@@ -8,6 +8,10 @@ module dd.panels {
         }
 
         public takePicture(): void {
+            if (!navigator.camera) {
+                this.notify("No camera found on navigator");
+                return;
+            }
             navigator.camera.getPicture(
                 (img: any) => this.onSuccess(img),
                 (msg: string) => this.onFail(msg),
@@ -25,10 +29,12 @@ module dd.panels {
             var image = $('<img></img>');
             image.attr("src", "data:image/jpeg;base64," + imageData);
             this.element.append(image);
+            this.notify("take a picture success");
         }
 
         private onFail(message) {
-            alert("failed: " + message);
+            //alert("failed: " + message);
+            this.notify("take a picture failed");
         }
 
     }

@@ -17,6 +17,10 @@ var dd;
             }
             TestPanel.prototype.takePicture = function () {
                 var _this = this;
+                if (!navigator.camera) {
+                    this.notify("No camera found on navigator");
+                    return;
+                }
                 navigator.camera.getPicture(function (img) {
                     return _this.onSuccess(img);
                 }, function (msg) {
@@ -35,10 +39,12 @@ var dd;
                 var image = $('<img></img>');
                 image.attr("src", "data:image/jpeg;base64," + imageData);
                 this.element.append(image);
+                this.notify("take a picture success");
             };
 
             TestPanel.prototype.onFail = function (message) {
-                alert("failed: " + message);
+                //alert("failed: " + message);
+                this.notify("take a picture failed");
             };
             return TestPanel;
         })(dd.panels.BasePanel);
