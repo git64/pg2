@@ -1,9 +1,9 @@
 module dd {
     export class Application {
         constructor() {
-            if (!navigator.device)
-                document.addEventListener("deviceready", () => this.handleDeviceReady());
-            else
+//            if (!navigator.device)
+//                document.addEventListener("deviceready", () => this.handleDeviceReady());
+//            else
                 this.handleDeviceReady();
         }
 
