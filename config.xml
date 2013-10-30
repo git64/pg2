@@ -19,4 +19,6 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="target-device" value="universal" />
 	<preference name="fullscreen" value="false" />
+	<uses-feature android:name="android.hardware.camera" />
+	<uses-permission android:name="android.permission.CAMERA" />
 </widget>

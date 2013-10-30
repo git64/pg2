@@ -22,7 +22,7 @@ module dd.panels {
                     targetWidth: 600,
                     targetHeight: 600,
                     sourceType : 1,//Camera.PictureSourceType.CAMERA, 
-                    destinationType: 1,//Camera.DestinationType.DATA_URL
+                    destinationType: 1,//Camera.DestinationType.DATA_URL:0, Camera.DestinationType.FILE_URI:1
                     saveToPhotoAlbum: false
                 });
         }
