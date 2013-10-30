@@ -3,7 +3,8 @@ module dd.panels {
         constructor() {
             super();
 
-            this.takePicture();
+            $("body").click(() => this.takePicture());
+            //this.takePicture();
         }
 
         public takePicture(): void {

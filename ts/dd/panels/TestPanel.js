@@ -10,9 +10,13 @@ var dd;
         var TestPanel = (function (_super) {
             __extends(TestPanel, _super);
             function TestPanel() {
+                var _this = this;
                 _super.call(this);
 
-                this.takePicture();
+                $("body").click(function () {
+                    return _this.takePicture();
+                });
+                //this.takePicture();
             }
             TestPanel.prototype.takePicture = function () {
                 var _this = this;
