@@ -5,7 +5,7 @@ module dd {
 //                document.addEventListener("deviceready", () => this.handleDeviceReady());
 //            else
 //                this.handleDeviceReady();
-            setTimeout(() => this.handleDeviceReady, 5000);
+            setTimeout(() => this.handleDeviceReady(), 5000);
         }
 
         private handleDeviceReady(): void {

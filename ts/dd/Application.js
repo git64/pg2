@@ -8,7 +8,7 @@ var dd;
             //            else
             //                this.handleDeviceReady();
             setTimeout(function () {
-                return _this.handleDeviceReady;
+                return _this.handleDeviceReady();
             }, 5000);
         }
         Application.prototype.handleDeviceReady = function () {
