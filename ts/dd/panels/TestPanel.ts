@@ -34,9 +34,10 @@ module dd.panels {
         }
 
         private onSuccess(imageData) {
-            //            var image = $('<img></img>');
+            var image = $('<img></img>');
             //            image.attr("src", "data:image/jpeg;base64," + imageData);
-            //            this.element.append(image);
+            image.attr("src", imageData);
+            this.element.append(image);
             this.notify("take a picture success");
         }
 
