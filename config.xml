@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0"
-	id="com.danndann.playground3" version="1.0.0">
+	id="com.danndann.playground3" versionCode="10" version="1.0.0">
 	<name>DannDann</name>
-	<description>DannDann</description>
-	<author href="http://danndann.github.com" email="DannDann@github.com">DannDann
+	<description>
+		DannDann
+	</description>
+	<author href="http://danndann.github.com" email="DannDann@github.com">
+		DannDann
 	</author>
-	<access origin="*" />
+	<!-- <access origin="*" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/device" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/camera" /> -->
@@ -15,15 +18,16 @@
 	<!-- <feature name="http://api.phonegap.com/1.0/media" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/network" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/notification" /> -->
-	<preference name="phonegap-version" value="3.0.0" />
-	<preference name="target-device" value="universal" />
-	<preference name="fullscreen" value="false" />
+	<!-- <preference name="target-device" value="universal" /> -->
+	<!-- <preference name="fullscreen" value="false" /> -->
 	<!-- <preference name="orientation" value="portrait" /> -->
-	
-	<gap:plugin name="org.apache.cordova.device" />
+
+	<preference name="phonegap-version" value="3.0.0" />
+
+	<!-- <gap:plugin name="org.apache.cordova.device" /> -->
 	<gap:plugin name="org.apache.cordova.core.camera" />
-	<gap:plugin name="org.apache.cordova.file" />
-	<gap:plugin name="org.apache.cordova.file-transfer" />
-	<gap:plugin name="org.apache.cordova.media-capture" />
-	<gap:plugin name="org.apache.cordova.media" />
+	<!-- <gap:plugin name="org.apache.cordova.file" /> -->
+	<!-- <gap:plugin name="org.apache.cordova.file-transfer" /> -->
+	<!-- <gap:plugin name="org.apache.cordova.media-capture" /> -->
+	<!-- <gap:plugin name="org.apache.cordova.media" /> -->
 </widget>
