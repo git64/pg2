@@ -19,4 +19,6 @@
 	<!-- <preference name="orientation" value="portrait" /> -->
 	<preference name="target-device" value="universal" />
 	<preference name="fullscreen" value="false" />
+	
+	<gap:plugin name="org.apache.cordova.core.camera" />
 </widget>
