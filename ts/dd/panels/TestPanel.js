@@ -31,13 +31,13 @@ var dd;
                 }, function (msg) {
                     return _this.onFail(msg);
                 }, {
-                    quality: 100,
-                    //targetWidth: -1,
-                    //targetHeight: -1,
-                    sourceType: 1,
-                    destinationType: 1,
+                    quality: 20,
+                    targetWidth: 400,
+                    sourceType: navigator.camera.PictureSourceType.CAMERA,
+                    destinationType: navigator.camera.DestinationType.FILE_URI,
                     encodingType: navigator.camera.EncodingType.JPEG,
-                    saveToPhotoAlbum: false
+                    saveToPhotoAlbum: false,
+                    correctOrientation: true
                 });
             };
 

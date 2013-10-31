@@ -12,19 +12,19 @@ module dd.panels {
                 this.notify("No camera found on navigator");
                 return;
             }
-            
+
             this.notify("Try to take a picture");
             navigator.camera.getPicture(
                 (img: any) => this.onSuccess(img),
                 (msg: string) => this.onFail(msg),
                 {
-                    quality: 100,
-                    //targetWidth: -1,
-                    //targetHeight: -1,
-                    sourceType : 1,//Camera.PictureSourceType.CAMERA, 
-                    destinationType: 1,//Camera.DestinationType.DATA_URL:0, Camera.DestinationType.FILE_URI:1
+                    quality: 20,
+                    targetWidth: 400,
+                    sourceType: navigator.camera.PictureSourceType.CAMERA,
+                    destinationType: navigator.camera.DestinationType.FILE_URI,
                     encodingType: navigator.camera.EncodingType.JPEG,
-                    saveToPhotoAlbum: false
+                    saveToPhotoAlbum: false,
+                    correctOrientation: true
                 });
         }
 
@@ -33,9 +33,9 @@ module dd.panels {
         }
 
         private onSuccess(imageData) {
-//            var image = $('<img></img>');
-//            image.attr("src", "data:image/jpeg;base64," + imageData);
-//            this.element.append(image);
+            //            var image = $('<img></img>');
+            //            image.attr("src", "data:image/jpeg;base64," + imageData);
+            //            this.element.append(image);
             this.notify("take a picture success");
         }
 
