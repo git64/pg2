@@ -18,11 +18,12 @@ module dd.panels {
                 (img: any) => this.onSuccess(img),
                 (msg: string) => this.onFail(msg),
                 {
-                    quality: 30,
-                    targetWidth: -1,
-                    targetHeight: -1,
+                    quality: 100,
+                    //targetWidth: -1,
+                    //targetHeight: -1,
                     sourceType : 1,//Camera.PictureSourceType.CAMERA, 
                     destinationType: 1,//Camera.DestinationType.DATA_URL:0, Camera.DestinationType.FILE_URI:1
+                    encodingType: navigator.camera.EncodingType.JPEG,
                     saveToPhotoAlbum: false
                 });
         }

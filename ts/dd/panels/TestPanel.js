@@ -31,11 +31,12 @@ var dd;
                 }, function (msg) {
                     return _this.onFail(msg);
                 }, {
-                    quality: 30,
-                    targetWidth: -1,
-                    targetHeight: -1,
+                    quality: 100,
+                    //targetWidth: -1,
+                    //targetHeight: -1,
                     sourceType: 1,
                     destinationType: 1,
+                    encodingType: navigator.camera.EncodingType.JPEG,
                     saveToPhotoAlbum: false
                 });
             };
