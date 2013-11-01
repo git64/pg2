@@ -11,8 +11,8 @@ else
                 this.handleDeviceReady();
         }
         Application.prototype.handleDeviceReady = function () {
-            if ($("#test-panel").length > 0)
-                new dd.panels.TestPanel();
+            if ($(".open-test-panel").length > 0)
+                new dd.ui.panels.TestPanel();
         };
         return Application;
     })();

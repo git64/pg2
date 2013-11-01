@@ -1,7 +1,8 @@
-module dd.panels {
-    export class TestPanel extends dd.panels.BasePanel {
+module dd.ui.panels {
+    export class TestPanel extends dd.ui.panels.BasePanel {
         constructor() {
             super();
+            this.element.addClass("dd-ui-panels-test-panel");
 
             $("body").click(() => this.takePicture());
             //this.takePicture();
@@ -27,10 +28,6 @@ module dd.panels {
                     saveToPhotoAlbum: false,
                     correctOrientation: false
                 });
-        }
-
-        public create(): JQuery {
-            return $("#test-panel");
         }
 
         private onSuccess(imageData) {

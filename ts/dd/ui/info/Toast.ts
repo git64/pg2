@@ -1,14 +1,13 @@
-module dd.ui {
-    export class Notification extends dd.ui.BaseUI {
-        private _message: string;
+module dd.ui.info {
+    export class Toast extends dd.ui.info.BaseInfo {
         constructor(message: string) {
-            this._message = message;
-            super();
+            super(message);
+            this.element.addClass("dd-ui-info-toast");
         }
 
         public create(): JQuery {
-            var msg: JQuery = $("<div>" + this._message + "</div>");
-            msg.addClass("notification");
+            var msg: JQuery = $("<div>" + this.message + "</div>");
+            msg.addClass("toast");
             msg.click((evt: any) => this.handleClick(evt));
             return msg;
         }

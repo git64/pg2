@@ -1,4 +1,4 @@
-compiler.codeGenTarget=ECMASCRIPT3
+compiler.codeGenTarget=ECMASCRIPT5
 compiler.compileOnSave=true
 compiler.mapSourceFiles=false
 compiler.moduleGenTarget=UNSPECIFIED
