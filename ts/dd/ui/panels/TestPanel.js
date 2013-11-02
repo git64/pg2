@@ -22,6 +22,9 @@ var dd;
                 }
                 TestPanel.prototype.takePicture = function () {
                     var _this = this;
+                    this.notify("No camera found on navigator");
+                    return;
+
                     if (!navigator.camera) {
                         this.notify("No camera found on navigator");
                         return;
