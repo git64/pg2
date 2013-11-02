@@ -71,6 +71,15 @@ var dd;
 
             Signal.prototype.add = function (listener, context) {
                 if (typeof context === "undefined") { context = null; }
+                //            if (context) {
+                //                var an: any = arguments.callee.caller.prototype;
+                //                console.log(an);
+                //                console.log(context);
+                //                console.log(an == context);
+                //                console.log(an.constructor);
+                //                console.log(context.constructor);
+                //                console.log(an.constructor == context.constructor);
+                //            }
                 var sl = this.retrieveSlot(listener);
                 if (sl) {
                     var idx = this._slots.indexOf(sl);

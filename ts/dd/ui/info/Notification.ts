@@ -6,7 +6,7 @@ module dd.ui.info {
             this.element.addClass("dd-ui-info-notification");
             this.element.bind("click.notification", (evt: any) => this.handleClick(evt));
             this.signalAdded.add(this.onAdded, this);
-            this.signalTick.once(this.onTick, this);
+//            this.signalTick.once(this.onTick, this);
         }
 
         private onTick(): void {

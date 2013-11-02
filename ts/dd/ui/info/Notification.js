@@ -19,7 +19,7 @@ var dd;
                         return _this.handleClick(evt);
                     });
                     this.signalAdded.add(this.onAdded, this);
-                    this.signalTick.once(this.onTick, this);
+                    //            this.signalTick.once(this.onTick, this);
                 }
                 Notification.prototype.onTick = function () {
                     console.log("TICK");

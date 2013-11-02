@@ -1,4 +1,4 @@
-.dd-ui-info-notification {
+/* .dd-ui-info-notification {
 	position:relative;
 	width: 100%;
 	height: 30px;
@@ -8,10 +8,25 @@
 	color: #FFFFFF;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
 	cursor: pointer;
+} */
+.dd-ui-info-notification {
+	position: relative;
+	min-width: 120px;
+	font-size: 14px;
+	color: #333333;
+	margin: 5px;
+	background-color: #FFFFFF;
+	line-height: 20px;
+	padding: 5px;
+	border: 1px solid #BBBBBB;
+	outline: 1px solid #EEEEEE;
+	text-align: center;
+	background-color: #FFFFFF;
+	cursor: pointer;
 }
 
 .dd-ui-info-notification:after {
-	content:" ";
+	content: " ";
 	display: block;
 	width: 20px;
 	height: 20px;
@@ -22,4 +37,9 @@
 	background-size: 20px;
 	background-position: center;
 	background-image: url(../assets/dd.ui.info.notificaton-close.png);
+}
+
+.dd-ui-info-notification:hover {
+	border: 1px solid #FFFFFF;
+	outline: 1px solid #6DB8FB;
 }

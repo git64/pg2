@@ -53,6 +53,17 @@ module dd.core {
         }
 
         public add(listener: Function, context: any = null): Slot {
+
+//            if (context) {
+//                var an: any = arguments.callee.caller.prototype;
+//                console.log(an);
+//                console.log(context);
+//                console.log(an == context);
+//                console.log(an.constructor);
+//                console.log(context.constructor);
+//                console.log(an.constructor == context.constructor);
+//            }
+
             var sl = this.retrieveSlot(listener);
             if (sl) {
                 var idx: number = this._slots.indexOf(sl);
@@ -60,6 +71,7 @@ module dd.core {
                 this._slots.push(sl);
                 return sl;
             }
+
 
             sl = new Slot(this, listener, context);
             this._slots.push(sl);
