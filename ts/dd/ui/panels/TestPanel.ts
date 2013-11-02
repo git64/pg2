@@ -19,7 +19,7 @@ module dd.ui.panels {
                 (img: any) => this.onSuccess(img),
                 (msg: string) => this.onFail(msg),
                 {
-                    quality: 50,
+                    quality: 20,
                     targetWidth: 1024,
                     targetHeight: 768,
                     sourceType: navigator.camera.PictureSourceType.CAMERA,
