@@ -15,7 +15,7 @@ var dd;
                     _super.call(this);
                     this.element.addClass("dd-ui-panels-test-panel");
 
-                    $("body").click(function () {
+                    this.element.click(function () {
                         return _this.takePicture();
                     });
                     //this.takePicture();

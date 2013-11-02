@@ -4,7 +4,7 @@ module dd.ui.panels {
             super();
             this.element.addClass("dd-ui-panels-test-panel");
 
-            $("body").click(() => this.takePicture());
+            this.element.click(() => this.takePicture());
             //this.takePicture();
         }
 
