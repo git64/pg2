@@ -13,13 +13,18 @@ var dd;
                 function BasePanel() {
                     _super.call(this);
                     this.element.addClass("dd-ui-panels-base-panel");
-
-                    $("#application").append(this.element);
+                    this.stage.add(this);
                 }
                 BasePanel.prototype.notify = function (message) {
                     var noti = new dd.ui.info.Notification(message);
-                    this.element.append(noti.element);
+                    this.add(noti);
                     return noti;
+                };
+
+                BasePanel.prototype.toast = function (message) {
+                    var tst = new dd.ui.info.Toast(message);
+                    this.add(tst);
+                    return tst;
                 };
                 return BasePanel;
             })(dd.ui.BaseUI);

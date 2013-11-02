@@ -3,14 +3,19 @@ module dd.ui.panels {
         constructor() {
             super();
             this.element.addClass("dd-ui-panels-base-panel");
-            
-            $("#application").append(this.element);
+            this.stage.add(this);
         }
 
         public notify(message: string): dd.ui.info.Notification {
             var noti = new dd.ui.info.Notification(message);
-            this.element.append(noti.element);
+            this.add(noti);
             return noti;
+        }
+        
+        public toast(message: string): dd.ui.info.Toast {
+            var tst = new dd.ui.info.Toast(message);
+            this.add(tst);
+            return tst;
         }
     }
 }

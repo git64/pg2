@@ -2,6 +2,7 @@
 /// <reference path='ts/definitions/phonegap.d.ts' />
 /// <reference path="ts/dd/model/BaseDataManager.ts" />
 /// <reference path="ts/dd/ui/BaseUI.ts" />
+/// <reference path="ts/dd/ui/Stage.ts" />
 /// <reference path="ts/dd/ui/info/BaseInfo.ts" />
 /// <reference path="ts/dd/ui/info/Notification.ts" />
 /// <reference path="ts/dd/ui/info/Toast.ts" />

@@ -15,16 +15,22 @@ var dd;
                     _super.call(this, message);
                     this.element.text(message);
                     this.element.addClass("dd-ui-info-notification");
-                    this.element.click(function (evt) {
+                    this.element.bind("click.notification", function (evt) {
                         return _this.handleClick(evt);
                     });
                 }
                 Notification.prototype.handleClick = function (evt) {
+                    var _this = this;
                     this.element.slideUp(300, function () {
-                        $(this).remove();
+                        return _this.dispose();
                     });
                     evt.stopPropagation();
                     return false;
+                };
+
+                Notification.prototype.dispose = function () {
+                    this.element.unbind("click.notification");
+                    _super.prototype.dispose.call(this);
                 };
                 return Notification;
             })(dd.ui.info.BaseInfo);

@@ -3,6 +3,8 @@ var dd;
     var Application = (function () {
         function Application() {
             var _this = this;
+            this._stage = new dd.ui.Stage($("#application"));
+
             if (isDeviceReady)
                 document.addEventListener("deviceready", function () {
                     return _this.handleDeviceReady();

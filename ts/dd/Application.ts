@@ -1,8 +1,12 @@
-declare var isDeviceReady:boolean;
+declare var isDeviceReady: boolean;
 
 module dd {
     export class Application {
+        private _stage: dd.ui.Stage;
+        
         constructor() {
+            this._stage = new dd.ui.Stage($("#application"));
+
             if (isDeviceReady)
                 document.addEventListener("deviceready", () => this.handleDeviceReady());
             else

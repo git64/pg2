@@ -33,14 +33,14 @@ var dd;
                     }, function (msg) {
                         return _this.onFail(msg);
                     }, {
-                        quality: 100,
+                        quality: 50,
                         targetWidth: 1024,
                         targetHeight: 768,
                         sourceType: navigator.camera.PictureSourceType.CAMERA,
                         destinationType: navigator.camera.DestinationType.FILE_URI,
                         encodingType: navigator.camera.EncodingType.JPEG,
                         saveToPhotoAlbum: false,
-                        correctOrientation: false
+                        correctOrientation: true
                     });
                 };
 
