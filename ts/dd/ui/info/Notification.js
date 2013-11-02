@@ -18,7 +18,17 @@ var dd;
                     this.element.bind("click.notification", function (evt) {
                         return _this.handleClick(evt);
                     });
+                    this.signalAdded.add(this.onAdded, this);
+                    this.signalTick.once(this.onTick, this);
                 }
+                Notification.prototype.onTick = function () {
+                    console.log("TICK");
+                };
+
+                Notification.prototype.onAdded = function (target, parent) {
+                    console.log("ADDED");
+                };
+
                 Notification.prototype.handleClick = function (evt) {
                     var _this = this;
                     this.element.slideUp(300, function () {

@@ -10,11 +10,11 @@ module dd.ui.panels {
 
         public takePicture(): void {
             if (!navigator.camera) {
-                this.notify("No camera found on navigator");
+                this.stage.notify("No camera found on navigator");
                 return;
             }
 
-            this.notify("Try to take a picture");
+            this.stage.notify("Try to take a picture");
             navigator.camera.getPicture(
                 (img: any) => this.onSuccess(img),
                 (msg: string) => this.onFail(msg),
@@ -35,12 +35,12 @@ module dd.ui.panels {
             //            image.attr("src", "data:image/jpeg;base64," + imageData);
             image.attr("src", imageData);
             this.element.append(image);
-            this.notify("take a picture success");
+            this.stage.notify("take a picture success");
         }
 
         private onFail(message) {
             //alert("failed: " + message);
-            this.notify("take a picture failed");
+            this.stage.notify("take a picture failed");
         }
 
     }

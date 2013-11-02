@@ -15,17 +15,6 @@ var dd;
                     this.element.addClass("dd-ui-panels-base-panel");
                     this.stage.add(this);
                 }
-                BasePanel.prototype.notify = function (message) {
-                    var noti = new dd.ui.info.Notification(message);
-                    this.stage.add(noti);
-                    return noti;
-                };
-
-                BasePanel.prototype.toast = function (message) {
-                    var tst = new dd.ui.info.Toast(message);
-                    this.stage.add(tst);
-                    return tst;
-                };
                 return BasePanel;
             })(dd.ui.BaseUI);
             panels.BasePanel = BasePanel;

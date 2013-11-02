@@ -5,6 +5,16 @@ module dd.ui.info {
             this.element.text(message);
             this.element.addClass("dd-ui-info-notification");
             this.element.bind("click.notification", (evt: any) => this.handleClick(evt));
+            this.signalAdded.add(this.onAdded, this);
+            this.signalTick.once(this.onTick, this);
+        }
+
+        private onTick(): void {
+            console.log("TICK");
+        }
+
+        private onAdded(target: dd.ui.BaseUI, parent: dd.ui.BaseUI): void {
+            console.log("ADDED");
         }
 
         private handleClick(evt: any): boolean {

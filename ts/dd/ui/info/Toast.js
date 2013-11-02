@@ -19,12 +19,12 @@ var dd;
                     var msg = $("<div>" + this.message + "</div>");
                     msg.addClass("toast");
                     msg.click(function (evt) {
-                        return _this.handleClick(evt);
+                        return _this.onClick(evt);
                     });
                     return msg;
                 };
 
-                Toast.prototype.handleClick = function (evt) {
+                Toast.prototype.onClick = function (evt) {
                     this.element.slideUp(300, function () {
                         $(this).remove();
                     });

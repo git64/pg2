@@ -1,5 +1,6 @@
 /// <reference path='ts/definitions/jquery-1.10.2.d.ts' />
 /// <reference path='ts/definitions/phonegap.d.ts' />
+/// <reference path="ts/dd/core/Signal.ts" />
 /// <reference path="ts/dd/model/BaseDataManager.ts" />
 /// <reference path="ts/dd/ui/BaseUI.ts" />
 /// <reference path="ts/dd/ui/Stage.ts" />

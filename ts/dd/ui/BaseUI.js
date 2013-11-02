@@ -3,10 +3,22 @@ var dd;
     (function (ui) {
         var BaseUI = (function () {
             function BaseUI() {
+                //target:BaseUI, parent:BaseUI
+                this.signalAdded = new dd.core.Signal();
+                //target:BaseUI, parent:BaseUI
+                this.signalRemoved = new dd.core.Signal();
                 this._parent = null;
                 this._element = $("<div><div>");
                 this._element.addClass("dd-ui-base-ui");
             }
+            Object.defineProperty(BaseUI.prototype, "signalTick", {
+                get: function () {
+                    return BaseUI._signalTick;
+                },
+                enumerable: true,
+                configurable: true
+            });
+
             Object.defineProperty(BaseUI.prototype, "parent", {
                 get: function () {
                     return this._parent;
@@ -34,11 +46,13 @@ var dd;
             BaseUI.prototype.add = function (baseUI) {
                 baseUI._parent = this;
                 this._element.append(baseUI.element);
+                baseUI.signalAdded.dispatch(baseUI, this);
                 return baseUI;
             };
 
             BaseUI.prototype.remove = function () {
                 this._element.remove();
+                this.signalRemoved.dispatch(this, this._parent);
                 this._parent = null;
             };
 
@@ -46,6 +60,7 @@ var dd;
                 this.remove();
                 this._element = null;
             };
+            BaseUI._signalTick = new dd.core.Signal();
             return BaseUI;
         })();
         ui.BaseUI = BaseUI;

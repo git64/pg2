@@ -8,11 +8,11 @@ module dd.ui.info {
         public create(): JQuery {
             var msg: JQuery = $("<div>" + this.message + "</div>");
             msg.addClass("toast");
-            msg.click((evt: any) => this.handleClick(evt));
+            msg.click((evt: any) => this.onClick(evt));
             return msg;
         }
 
-        private handleClick(evt: any): boolean {
+        private onClick(evt: any): boolean {
             this.element.slideUp(300, function() { $(this).remove(); });
             evt.stopPropagation();
             return false;
