@@ -8,13 +8,13 @@ module dd.ui.panels {
 
         public notify(message: string): dd.ui.info.Notification {
             var noti = new dd.ui.info.Notification(message);
-            this.add(noti);
+            this.stage.add(noti);
             return noti;
         }
         
         public toast(message: string): dd.ui.info.Toast {
             var tst = new dd.ui.info.Toast(message);
-            this.add(tst);
+            this.stage.add(tst);
             return tst;
         }
     }

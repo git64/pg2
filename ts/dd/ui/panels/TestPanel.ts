@@ -9,10 +9,6 @@ module dd.ui.panels {
         }
 
         public takePicture(): void {
-        
-            this.notify("No camera found on navigator");
-            return;
-            
             if (!navigator.camera) {
                 this.notify("No camera found on navigator");
                 return;
