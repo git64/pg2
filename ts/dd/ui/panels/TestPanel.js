@@ -15,6 +15,15 @@ var dd;
                     _super.call(this);
                     this.element.addClass("dd-ui-panels-test-panel");
 
+                    if (navigator.splashscreen) {
+                        try  {
+                            navigator.splashscreen.show();
+                        } catch (e) {
+                            this.stage.notify("Error creating splash screen" + e);
+                        }
+                    } else
+                        this.stage.notify("No splashscreen property defined on navigator");
+
                     this.element.click(function () {
                         return _this.takePicture();
                     });

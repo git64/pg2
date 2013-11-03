@@ -4,6 +4,17 @@ module dd.ui.panels {
             super();
             this.element.addClass("dd-ui-panels-test-panel");
 
+            if (navigator.splashscreen) {
+                try {
+
+                    navigator.splashscreen.show();
+                } catch (e) {
+                    this.stage.notify("Error creating splash screen" + e);
+                }
+            }
+            else
+                this.stage.notify("No splashscreen property defined on navigator");
+
             this.element.click(() => this.takePicture());
             //this.takePicture();
         }
