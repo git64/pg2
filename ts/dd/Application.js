@@ -4,7 +4,6 @@ var dd;
         function Application() {
             var _this = this;
             this._stage = new dd.ui.Stage($("#application"));
-
             if (isDeviceReady)
                 document.addEventListener("deviceready", function () {
                     return _this.handleDeviceReady();
@@ -13,6 +12,7 @@ else
                 this.handleDeviceReady();
         }
         Application.prototype.handleDeviceReady = function () {
+            navigator.splashscreen.show();
             if ($(".open-test-panel").length > 0)
                 new dd.ui.panels.TestPanel();
         };
