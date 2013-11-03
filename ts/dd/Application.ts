@@ -13,7 +13,7 @@ module dd {
         }
 
         private handleDeviceReady(): void {
-            navigator.splashscreen.show();
+            //navigator.splashscreen.show();
             if ($(".open-test-panel").length > 0)
                 new dd.ui.panels.TestPanel();
         }

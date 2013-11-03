@@ -12,7 +12,6 @@ else
                 this.handleDeviceReady();
         }
         Application.prototype.handleDeviceReady = function () {
-            navigator.splashscreen.show();
             if ($(".open-test-panel").length > 0)
                 new dd.ui.panels.TestPanel();
         };
