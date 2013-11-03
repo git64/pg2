@@ -21,6 +21,8 @@
 	<!-- <preference name="target-device" value="universal" /> -->
 	<!-- <preference name="fullscreen" value="false" /> -->
 	<!-- <preference name="orientation" value="portrait" /> -->
+	
+	<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
 
 	<preference name="phonegap-version" value="3.0.0" />
 
