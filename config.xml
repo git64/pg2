@@ -22,7 +22,8 @@
 	<!-- <preference name="fullscreen" value="false" /> -->
 	<!-- <preference name="orientation" value="portrait" /> -->
 	
-	<gap:splash src="splash/android/hdpi.png" />
+	<gap:splash src="splash.png" />
+	<preference name="auto-hide-splash-screen" value="false" />
 	<preference name="splash-screen-duration" value="3000" />
 
 	<preference name="phonegap-version" value="3.0.0" />
