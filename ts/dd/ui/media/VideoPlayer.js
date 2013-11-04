@@ -63,6 +63,14 @@ var dd;
                     options.events = events;
 
                     this._player = new YT.Player(this._id, options);
+
+                    this.element.click(function () {
+                        return _this.onClick();
+                    });
+                };
+
+                VideoPlayer.prototype.onClick = function () {
+                    this.play();
                 };
 
                 VideoPlayer.prototype.onPlayerReady = function (e) {
@@ -75,7 +83,7 @@ var dd;
                     console.log(e);
                     if (e.data == YT.PlayerState.PLAYING && !this._done) {
                         this._done = true;
-                        this.play();
+                        //this.play();
                     }
                 };
 

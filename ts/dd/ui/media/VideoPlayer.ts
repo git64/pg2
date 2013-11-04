@@ -59,6 +59,13 @@ module dd.ui.media {
             options.events = events;
 
             this._player = new YT.Player(this._id, options);
+            
+            this.element.click(() => this.onClick());
+        }
+        
+        private onClick():void
+            {
+            this.play();
         }
 
         private onPlayerReady(e) {
@@ -71,7 +78,7 @@ module dd.ui.media {
             console.log(e);
             if (e.data == YT.PlayerState.PLAYING && !this._done) {
                 this._done = true;
-                this.play();
+                //this.play();
             }
         }
 
