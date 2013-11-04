@@ -81,22 +81,22 @@ var dd;
                 if (typeof source === "undefined") { source = null; }
                 _super.call(this);
                 this._source = null;
-                this._iconSize = IconSize.medium;
+                this._size = IconSize.medium;
                 this.element.addClass("dd-ui-icon");
-                this.element.addClass(IconSize[this._iconSize]);
+                this.element.addClass(IconSize[this._size]);
                 this.source = source;
             }
-            Object.defineProperty(Icon.prototype, "iconSize", {
+            Object.defineProperty(Icon.prototype, "size", {
                 get: function () {
-                    return this._iconSize;
+                    return this._size;
                 },
                 set: function (value) {
-                    if (this._iconSize == value)
+                    if (this._size == value)
                         return;
 
-                    this.element.removeClass(IconSize[this._iconSize]);
-                    this._iconSize = value;
-                    this.element.addClass(IconSize[this._iconSize]);
+                    this.element.removeClass(IconSize[this._size]);
+                    this._size = value;
+                    this.element.addClass(IconSize[this._size]);
                 },
                 enumerable: true,
                 configurable: true

@@ -66,26 +66,26 @@ module dd.ui {
     export class Icon extends BaseUI {
 
         private _source: string = null;
-        private _iconSize: IconSize = IconSize.medium;
+        private _size: IconSize = IconSize.medium;
 
         constructor(source: string = null) {
             super();
             this.element.addClass("dd-ui-icon");
-            this.element.addClass(IconSize[this._iconSize]);
+            this.element.addClass(IconSize[this._size]);
             this.source = source;
         }
 
-        public get iconSize(): IconSize {
-            return this._iconSize;
+        public get size(): IconSize {
+            return this._size;
         }
 
-        public set iconSize(value: IconSize) {
-            if (this._iconSize == value)
+        public set size(value: IconSize) {
+            if (this._size == value)
                 return;
 
-            this.element.removeClass(IconSize[this._iconSize]);
-            this._iconSize = value;
-            this.element.addClass(IconSize[this._iconSize]);
+            this.element.removeClass(IconSize[this._size]);
+            this._size = value;
+            this.element.addClass(IconSize[this._size]);
         }
 
         public get source(): string {

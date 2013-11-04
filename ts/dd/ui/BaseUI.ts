@@ -17,7 +17,7 @@ module dd.ui {
         private _parent: BaseUI = null;
 
         constructor() {
-            this._element = $("<div><div>");
+            this._element = $("<div></div>");
             this._element.addClass("dd-ui-base-ui");
         }
 

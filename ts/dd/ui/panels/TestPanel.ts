@@ -4,38 +4,44 @@ module dd.ui.panels {
             super();
             this.element.addClass("dd-ui-panels-test-panel");
 
-            if (navigator.splashscreen) {
-                try {
+//            if (navigator.splashscreen) {
+//                try {
+//
+//                    navigator.splashscreen.show();
+//                } catch (e) {
+//                    this.stage.notify("Error creating splash screen" + e);
+//                }
+//            }
+//            else
+//                this.stage.notify("No splashscreen property defined on navigator");
 
-                    navigator.splashscreen.show();
-                } catch (e) {
-                    this.stage.notify("Error creating splash screen" + e);
-                }
-            }
-            else
-                this.stage.notify("No splashscreen property defined on navigator");
+            //this.element.click(() => this.takePicture());
+            this.testVideoPlayer();
+        }
 
-            this.element.click(() => this.takePicture());
+        private testVideoPlayer(): void {
+            var vp = new dd.ui.media.VideoPlayer();
+            this.add(vp);
+        }
 
+        private testIcons(): void {
             for (var s in dd.ui.IconSource) {
                 var src = dd.ui.IconSource[s];
 
                 var ic = new dd.ui.Icon(src);
-                ic.iconSize = dd.ui.IconSize.large;
+                ic.size = dd.ui.IconSize.large;
                 this.add(ic);
 
                 var ic = new dd.ui.Icon(src);
-                ic.iconSize = dd.ui.IconSize.medium;
+                ic.size = dd.ui.IconSize.medium;
                 this.add(ic);
 
                 var ic = new dd.ui.Icon(src);
-                ic.iconSize = dd.ui.IconSize.small;
+                ic.size = dd.ui.IconSize.small;
                 this.add(ic);
-                
+
                 this.element.append("<br />");
             }
-
-            //this.takePicture();
         }
 
         public takePicture(): void {

@@ -8,7 +8,7 @@ var dd;
                 //target:BaseUI, parent:BaseUI
                 this.signalRemoved = new dd.core.Signal();
                 this._parent = null;
-                this._element = $("<div><div>");
+                this._element = $("<div></div>");
                 this._element.addClass("dd-ui-base-ui");
             }
             Object.defineProperty(BaseUI.prototype, "signalTick", {

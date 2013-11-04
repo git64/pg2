@@ -11,42 +11,47 @@ var dd;
             var TestPanel = (function (_super) {
                 __extends(TestPanel, _super);
                 function TestPanel() {
-                    var _this = this;
                     _super.call(this);
                     this.element.addClass("dd-ui-panels-test-panel");
 
-                    if (navigator.splashscreen) {
-                        try  {
-                            navigator.splashscreen.show();
-                        } catch (e) {
-                            this.stage.notify("Error creating splash screen" + e);
-                        }
-                    } else
-                        this.stage.notify("No splashscreen property defined on navigator");
+                    //            if (navigator.splashscreen) {
+                    //                try {
+                    //
+                    //                    navigator.splashscreen.show();
+                    //                } catch (e) {
+                    //                    this.stage.notify("Error creating splash screen" + e);
+                    //                }
+                    //            }
+                    //            else
+                    //                this.stage.notify("No splashscreen property defined on navigator");
+                    //this.element.click(() => this.takePicture());
+                    this.testVideoPlayer();
+                }
+                TestPanel.prototype.testVideoPlayer = function () {
+                    var vp = new dd.ui.media.VideoPlayer();
+                    this.add(vp);
+                };
 
-                    this.element.click(function () {
-                        return _this.takePicture();
-                    });
-
+                TestPanel.prototype.testIcons = function () {
                     for (var s in dd.ui.IconSource) {
                         var src = dd.ui.IconSource[s];
 
                         var ic = new dd.ui.Icon(src);
-                        ic.iconSize = dd.ui.IconSize.large;
+                        ic.size = dd.ui.IconSize.large;
                         this.add(ic);
 
                         var ic = new dd.ui.Icon(src);
-                        ic.iconSize = dd.ui.IconSize.medium;
+                        ic.size = dd.ui.IconSize.medium;
                         this.add(ic);
 
                         var ic = new dd.ui.Icon(src);
-                        ic.iconSize = dd.ui.IconSize.small;
+                        ic.size = dd.ui.IconSize.small;
                         this.add(ic);
 
                         this.element.append("<br />");
                     }
-                    //this.takePicture();
-                }
+                };
+
                 TestPanel.prototype.takePicture = function () {
                     var _this = this;
                     if (!navigator.camera) {
