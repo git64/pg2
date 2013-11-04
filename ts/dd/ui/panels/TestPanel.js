@@ -28,24 +28,23 @@ var dd;
                         return _this.takePicture();
                     });
 
-                    var ic = new dd.ui.Icon(dd.ui.IconSource.CAPTURE_PHOTO);
-                    ic.iconSize = dd.ui.IconSize.large;
-                    this.add(ic);
+                    for (var s in dd.ui.IconSource) {
+                        var src = dd.ui.IconSource[s];
 
-                    var ic = new dd.ui.Icon(dd.ui.IconSource.CAPTURE_PHOTO);
-                    ic.iconSize = dd.ui.IconSize.medium;
-                    this.add(ic);
+                        var ic = new dd.ui.Icon(src);
+                        ic.iconSize = dd.ui.IconSize.large;
+                        this.add(ic);
 
-                    var ic = new dd.ui.Icon(dd.ui.IconSource.CAPTURE_PHOTO);
-                    ic.iconSize = dd.ui.IconSize.small;
-                    this.add(ic);
+                        var ic = new dd.ui.Icon(src);
+                        ic.iconSize = dd.ui.IconSize.medium;
+                        this.add(ic);
 
-                    var ic = new dd.ui.Icon(dd.ui.IconSource.CONTROL_SETTINGS);
-                    this.add(ic);
+                        var ic = new dd.ui.Icon(src);
+                        ic.iconSize = dd.ui.IconSize.small;
+                        this.add(ic);
 
-                    var ic = new dd.ui.Icon(dd.ui.IconSource.CONTROL_SETTINGS);
-                    ic.iconSize = dd.ui.IconSize.large;
-                    this.add(ic);
+                        this.element.append("<br />");
+                    }
                     //this.takePicture();
                 }
                 TestPanel.prototype.takePicture = function () {
