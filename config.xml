@@ -9,8 +9,6 @@
 		DannDann
 	</author>
 	<access origin="*" />
-	<access origin="http://youtube.com" subdomains="true"
-		browserOnly="false" />
 	<!-- <feature name="http://api.phonegap.com/1.0/device" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/camera" /> -->

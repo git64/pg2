@@ -80,7 +80,7 @@ var dd;
                 };
 
                 VideoPlayer.prototype.onPlayerStateChange = function (e) {
-                    console.log(e);
+                    this.stage.notify(e);
                     if (e.data == YT.PlayerState.PLAYING && !this._done) {
                         this._done = true;
                         //this.play();
