@@ -16,6 +16,26 @@ module dd.ui.panels {
                 this.stage.notify("No splashscreen property defined on navigator");
 
             this.element.click(() => this.takePicture());
+            
+            var ic = new dd.ui.Icon(dd.ui.IconSource.CAPTURE_PHOTO);
+            ic.iconSize = dd.ui.IconSize.large;
+            this.add(ic);
+            
+            var ic = new dd.ui.Icon(dd.ui.IconSource.CAPTURE_PHOTO);
+            ic.iconSize = dd.ui.IconSize.medium;
+            this.add(ic);
+            
+            var ic = new dd.ui.Icon(dd.ui.IconSource.CAPTURE_PHOTO);
+            ic.iconSize = dd.ui.IconSize.small;
+            this.add(ic);
+            
+            var ic = new dd.ui.Icon(dd.ui.IconSource.CONTROL_SETTINGS);
+            this.add(ic);
+            
+            var ic = new dd.ui.Icon(dd.ui.IconSource.CONTROL_SETTINGS);
+            ic.iconSize = dd.ui.IconSize.large;
+            this.add(ic);
+            
             //this.takePicture();
         }
 

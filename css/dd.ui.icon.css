@@ -1,0 +1,33 @@
+.dd-ui-icon {
+	position: relative;
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	background-color: #FA901D;
+}
+
+.dd-ui-icon.small {
+	width: 32px;
+	height: 32px;
+}
+
+.dd-ui-icon.medium {
+	width: 64px;
+	height: 64px;
+}
+
+.dd-ui-icon.large {
+	width: 128px;
+	height: 128px;
+}
+
+.dd-ui-icon.capture-photo {
+	background-image: url(../assets/dd.ui.icon-capture-photo.png);
+}
+
+.dd-ui-icon.control-settings{
+	background-image: url(../assets/dd.ui.icon-control-settings.png);
+}
