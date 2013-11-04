@@ -9,6 +9,8 @@
 		DannDann
 	</author>
 	<access origin="*" />
+	<access origin="http://youtube.com" subdomains="true"
+		browserOnly="false" />
 	<!-- <feature name="http://api.phonegap.com/1.0/device" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/camera" /> -->
@@ -21,7 +23,7 @@
 	<!-- <preference name="target-device" value="universal" /> -->
 	<!-- <preference name="fullscreen" value="false" /> -->
 	<!-- <preference name="orientation" value="portrait" /> -->
-	
+
 	<gap:splash src="splash.png" />
 	<!-- <preference name="auto-hide-splash-screen" value="false" /> -->
 	<preference name="splash-screen-duration" value="3000" />
