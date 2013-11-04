@@ -70,9 +70,14 @@ module dd.ui.media {
             console.log(e);
             if (e.data == YT.PlayerState.PLAYING && !this._done) {
                 this._done = true;
+                this.play();
             }
         }
 
+        public play() {
+            this._player.playVideo();
+        }
+        
         public stop() {
             this._player.stopVideo();
         }

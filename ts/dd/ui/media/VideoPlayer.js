@@ -74,7 +74,12 @@ var dd;
                     console.log(e);
                     if (e.data == YT.PlayerState.PLAYING && !this._done) {
                         this._done = true;
+                        this.play();
                     }
+                };
+
+                VideoPlayer.prototype.play = function () {
+                    this._player.playVideo();
                 };
 
                 VideoPlayer.prototype.stop = function () {
