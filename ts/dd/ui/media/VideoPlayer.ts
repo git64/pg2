@@ -75,6 +75,7 @@ module dd.ui.media {
         }
 
         private onPlayerStateChange(e) {
+        console.log(e);
             this.stage.notify(e);
             if (e.data == YT.PlayerState.PLAYING && !this._done) {
                 this._done = true;
