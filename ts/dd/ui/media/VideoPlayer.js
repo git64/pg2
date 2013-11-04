@@ -67,6 +67,7 @@ var dd;
 
                 VideoPlayer.prototype.onPlayerReady = function (e) {
                     this._player.loadVideoById('M7lc1UVf-VE');
+                    this._container.focus();
                     //this._player.playVideo();
                 };
 
@@ -74,9 +75,7 @@ var dd;
                     console.log(e);
                     if (e.data == YT.PlayerState.PLAYING && !this._done) {
                         this._done = true;
-
-                        //                this.play();
-                        this._player.stopVideo();
+                        this.play();
                     }
                 };
 
