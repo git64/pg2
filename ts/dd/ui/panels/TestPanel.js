@@ -25,7 +25,8 @@ var dd;
                     //            else
                     //                this.stage.notify("No splashscreen property defined on navigator");
                     //this.element.click(() => this.takePicture());
-                    this.testVideoPlayer();
+                    //            this.testVideoPlayer();
+                    this.testIcons();
                 }
                 TestPanel.prototype.testVideoPlayer = function () {
                     var vp = new dd.ui.media.VideoPlayer();
