@@ -44,6 +44,8 @@ var dd;
             });
 
             BaseUI.prototype.add = function (baseUI) {
+                //            if(baseUI._parent != this)
+                //                baseUI._parent.signalAdded(baseUI, this);
                 baseUI._parent = this;
                 this._element.append(baseUI.element);
                 baseUI.signalAdded.dispatch(baseUI, this);

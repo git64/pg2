@@ -1,4 +1,7 @@
-declare var isDeviceReady: boolean;
+//declare var isDeviceReady: boolean;
+interface Window {
+    isDeviceReady: boolean;
+}
 
 module dd {
     export class Application {
@@ -6,7 +9,7 @@ module dd {
 
         constructor() {
             this._stage = new dd.ui.Stage($("#application"));
-            if (isDeviceReady)
+            if (!window.isDeviceReady)
                 document.addEventListener("deviceready", () => this.handleDeviceReady());
             else
                 this.handleDeviceReady();
@@ -15,6 +18,8 @@ module dd {
         private handleDeviceReady(): void {
             if ($(".open-test-panel").length > 0)
                 new dd.ui.panels.TestPanel();
+                
+            navigator.splashscreen.hide();
         }
     }
 }

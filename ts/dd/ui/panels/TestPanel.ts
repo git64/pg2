@@ -15,9 +15,9 @@ module dd.ui.panels {
 //            else
 //                this.stage.notify("No splashscreen property defined on navigator");
 
-            //this.element.click(() => this.takePicture());
+            this.element.click(() => this.takePicture());
 //            this.testVideoPlayer();
-            this.testIcons();
+//            this.testIcons();
         }
 
         private testVideoPlayer(): void {

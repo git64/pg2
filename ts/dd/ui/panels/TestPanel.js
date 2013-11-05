@@ -11,6 +11,7 @@ var dd;
             var TestPanel = (function (_super) {
                 __extends(TestPanel, _super);
                 function TestPanel() {
+                    var _this = this;
                     _super.call(this);
                     this.element.addClass("dd-ui-panels-test-panel");
 
@@ -24,9 +25,11 @@ var dd;
                     //            }
                     //            else
                     //                this.stage.notify("No splashscreen property defined on navigator");
-                    //this.element.click(() => this.takePicture());
+                    this.element.click(function () {
+                        return _this.takePicture();
+                    });
                     //            this.testVideoPlayer();
-                    this.testIcons();
+                    //            this.testIcons();
                 }
                 TestPanel.prototype.testVideoPlayer = function () {
                     var vp = new dd.ui.media.VideoPlayer();

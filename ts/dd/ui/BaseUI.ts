@@ -34,6 +34,8 @@ module dd.ui {
         }
 
         public add(baseUI: BaseUI): BaseUI {
+//            if(baseUI._parent != this)
+//                baseUI._parent.signalAdded(baseUI, this);
             baseUI._parent = this;
             this._element.append(baseUI.element);
             baseUI.signalAdded.dispatch(baseUI, this);
