@@ -50,10 +50,11 @@ var dd;
 
                     //            options.videoId = 'M7lc
                     var playerVars = {};
-                    playerVars.showinfo = 0;
-                    playerVars.controls = 0;
-                    playerVars.showsearch = 0;
-                    playerVars.rel = 0;
+
+                    //            playerVars.showinfo = 0;
+                    //            playerVars.controls = 0;
+                    //            playerVars.showsearch = 0;
+                    //            playerVars.rel = 0;
                     options.playerVars = playerVars;
 
                     var events = {};

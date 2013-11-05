@@ -50,10 +50,10 @@ module dd.ui.media {
             options.height = 270;
             //            options.videoId = 'M7lc            
             var playerVars: YT.PlayerVars = {};
-            playerVars.showinfo = 0;
-            playerVars.controls = 0;
-            playerVars.showsearch = 0;
-            playerVars.rel = 0;
+//            playerVars.showinfo = 0;
+//            playerVars.controls = 0;
+//            playerVars.showsearch = 0;
+//            playerVars.rel = 0;
             options.playerVars = playerVars;
 
             var events: YT.Events = {};
