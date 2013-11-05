@@ -15,6 +15,7 @@ var dd;
                     _super.call(this);
                     this._done = false;
                     this._player = null;
+                    this.element.addClass("dd-ui-media-video-player");
                     this._id = "dd-ui-media-yt-player-" + VideoPlayer.ID++;
                     this._container = $("<div id='" + this._id + "'></div>");
                     this.element.append(this._container);
