@@ -19,6 +19,8 @@ var dd;
                     this._container = $("<div id='" + this._id + "'></div>");
                     this.element.append(this._container);
 
+                    this.element.css({ left: "50px", top: "50px" });
+
                     this.loadScript();
                 }
                 VideoPlayer.prototype.loadScript = function () {
