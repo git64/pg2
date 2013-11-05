@@ -26,6 +26,7 @@ var dd;
                 });
 
                 this.setupTick();
+
                 this.tick();
             }
             Stage.prototype.resize = function () {

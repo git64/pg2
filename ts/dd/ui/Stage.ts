@@ -17,6 +17,7 @@ module dd.ui {
             $(window).bind("resize", () => this.resize());
             
             this.setupTick();
+            
             this.tick();
         }
 

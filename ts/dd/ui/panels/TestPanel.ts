@@ -4,20 +4,20 @@ module dd.ui.panels {
             super();
             this.element.addClass("dd-ui-panels-test-panel");
 
-//            if (navigator.splashscreen) {
-//                try {
-//
-//                    navigator.splashscreen.show();
-//                } catch (e) {
-//                    this.stage.notify("Error creating splash screen" + e);
-//                }
-//            }
-//            else
-//                this.stage.notify("No splashscreen property defined on navigator");
+            //            if (navigator.splashscreen) {
+            //                try {
+            //
+            //                    navigator.splashscreen.show();
+            //                } catch (e) {
+            //                    this.stage.notify("Error creating splash screen" + e);
+            //                }
+            //            }
+            //            else
+            //                this.stage.notify("No splashscreen property defined on navigator");
 
-            this.element.click(() => this.takePicture());
-//            this.testVideoPlayer();
-//            this.testIcons();
+//            this.element.click(() => this.takePicture());
+            //            this.testVideoPlayer();
+                        this.testIcons();
         }
 
         private testVideoPlayer(): void {
@@ -46,6 +46,7 @@ module dd.ui.panels {
         }
 
         public takePicture(): void {
+            console.log("CLICK");
             if (!navigator.camera) {
                 this.stage.notify("No camera found on navigator");
                 return;

@@ -9,6 +9,7 @@ module dd {
 
         constructor() {
             this._stage = new dd.ui.Stage($("#application"));
+            console.log(window.isDeviceReady);
             if (!window.isDeviceReady)
                 document.addEventListener("deviceready", () => this.handleDeviceReady());
             else
@@ -16,10 +17,9 @@ module dd {
         }
 
         private handleDeviceReady(): void {
+        console.log("READY");
             if ($(".open-test-panel").length > 0)
                 new dd.ui.panels.TestPanel();
-                
-            navigator.splashscreen.hide();
         }
     }
 }
