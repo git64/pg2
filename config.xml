@@ -21,6 +21,7 @@
 	<!-- <preference name="target-device" value="universal" /> -->
 	<!-- <preference name="fullscreen" value="false" /> -->
 	<!-- <preference name="orientation" value="portrait" /> -->
+	<preference name="android-minSdkVersion" value="12" />
 
 	<gap:splash src="splash.png" />
 	<!-- <preference name="auto-hide-splash-screen" value="false" /> -->
