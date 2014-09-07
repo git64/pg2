@@ -3,6 +3,8 @@ interface Window {
     isDeviceReady: boolean;
 }
 
+// TEST
+
 module dd {
     export class Application {
         private _stage: dd.ui.Stage;
