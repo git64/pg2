@@ -70,7 +70,6 @@ var dd;
             };
 
             Signal.prototype.add = function (listener, context) {
-                if (typeof context === "undefined") { context = null; }
                 //            if (context) {
                 //                var an: any = arguments.callee.caller.prototype;
                 //                console.log(an);
@@ -80,6 +79,7 @@ var dd;
                 //                console.log(context.constructor);
                 //                console.log(an.constructor == context.constructor);
                 //            }
+                if (typeof context === "undefined") { context = null; }
                 var sl = this.retrieveSlot(listener);
                 if (sl) {
                     var idx = this._slots.indexOf(sl);

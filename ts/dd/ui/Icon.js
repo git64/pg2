@@ -81,7 +81,7 @@ var dd;
                 if (typeof source === "undefined") { source = null; }
                 _super.call(this);
                 this._source = null;
-                this._size = IconSize.medium;
+                this._size = 1 /* medium */;
                 this.element.addClass("dd-ui-icon");
                 this.element.addClass(IconSize[this._size]);
                 this.source = source;
@@ -121,7 +121,7 @@ var dd;
             });
 
             return Icon;
-        })(ui.BaseUI);
+        })(dd.ui.BaseUI);
         ui.Icon = Icon;
     })(dd.ui || (dd.ui = {}));
     var ui = dd.ui;

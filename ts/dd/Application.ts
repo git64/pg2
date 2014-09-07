@@ -3,7 +3,7 @@ interface Window {
     isDeviceReady: boolean;
 }
 
-// TEST
+// No-TEST
 
 module dd {
     export class Application {

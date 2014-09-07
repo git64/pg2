@@ -96,7 +96,7 @@ var dd;
                 this.signalTick.dispatch();
             };
             return Stage;
-        })(ui.BaseUI);
+        })(dd.ui.BaseUI);
         ui.Stage = Stage;
     })(dd.ui || (dd.ui = {}));
     var ui = dd.ui;

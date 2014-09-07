@@ -25,6 +25,8 @@ var dd;
                     this.loadScript();
                 }
                 YouTubePlayer.prototype.loadScript = function () {
+                    //if the youtube library is already defined/loaded
+                    //just skip the loading process and create
                     if (window["YT"]) {
                         this.create();
                         return;

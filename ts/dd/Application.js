@@ -1,3 +1,5 @@
+
+// No-TEST
 var dd;
 (function (dd) {
     var Application = (function () {
@@ -9,7 +11,7 @@ var dd;
                 document.addEventListener("deviceready", function () {
                     return _this.handleDeviceReady();
                 });
-else
+            else
                 this.handleDeviceReady();
         }
         Application.prototype.handleDeviceReady = function () {

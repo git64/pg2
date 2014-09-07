@@ -38,15 +38,15 @@ var dd;
                         var src = dd.ui.IconSource[s];
 
                         var ic = new dd.ui.Icon(src);
-                        ic.size = dd.ui.IconSize.large;
+                        ic.size = 2 /* large */;
                         this.add(ic);
 
                         var ic = new dd.ui.Icon(src);
-                        ic.size = dd.ui.IconSize.medium;
+                        ic.size = 1 /* medium */;
                         this.add(ic);
 
                         var ic = new dd.ui.Icon(src);
-                        ic.size = dd.ui.IconSize.small;
+                        ic.size = 0 /* small */;
                         this.add(ic);
 
                         this.element.append("<br />");
