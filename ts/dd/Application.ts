@@ -3,7 +3,7 @@ interface Window {
     isDeviceReady: boolean;
 }
 
-// No-TEST
+// TEST
 
 module dd {
     export class Application {
@@ -11,6 +11,7 @@ module dd {
 
         constructor() {
             this._stage = new dd.ui.Stage($("#application"));
+            console.log("test");
             console.log(window.isDeviceReady);
             if (!window.isDeviceReady)
                 document.addEventListener("deviceready", () => this.handleDeviceReady());

@@ -1,11 +1,12 @@
 
-// No-TEST
+// TEST
 var dd;
 (function (dd) {
     var Application = (function () {
         function Application() {
             var _this = this;
             this._stage = new dd.ui.Stage($("#application"));
+            console.log("test");
             console.log(window.isDeviceReady);
             if (!window.isDeviceReady)
                 document.addEventListener("deviceready", function () {
