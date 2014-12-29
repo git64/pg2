@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0"
-	id="com.danndann.playground3" version="1.0.0">
-	<name>DannDann</name>
-	<description>
-		DannDann
-	</description>
-	<author href="http://danndann.github.com" email="DannDann@github.com">
-		DannDann
-	</author>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.qbsag.playground1" version="1.0.0">
+	
+	<name>QuickBSAG</name>
+	<description>QuickBSAG</description>
+	
+	<author href="https://github.com/git64/pg1" email="github2@ezisonline.de">DannDann</author>
+	
 	<access origin="*" />
 	<!-- <feature name="http://api.phonegap.com/1.0/device" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
@@ -27,7 +25,7 @@
 	<!-- <preference name="auto-hide-splash-screen" value="false" /> -->
 	<preference name="splash-screen-duration" value="3000" />
 
-	<preference name="phonegap-version" value="3.0.0" />
+	<preference name="phonegap-version" value="3.6.3" />
 
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="org.apache.cordova.splashscreen" />
