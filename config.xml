@@ -20,16 +20,18 @@
 	<!-- <preference name="fullscreen" value="false" /> -->
 	<!-- <preference name="orientation" value="portrait" /> -->
 	<!-- <preference name="android-minSdkVersion" value="12" /> -->
-
+	
+	<icon src="res/appicon.default.png" />
 	<gap:splash src="splash.png" />
 	<!-- <preference name="auto-hide-splash-screen" value="false" /> -->
-	<preference name="splash-screen-duration" value="3000" />
+	<!-- <preference name="splash-screen-duration" value="3000" />  --> 
 
 	<preference name="phonegap-version" value="3.6.3" />
-
+	
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="org.apache.cordova.splashscreen" />
 	<gap:plugin name="org.apache.cordova.core.camera" />
+	
 	<!-- <gap:plugin name="org.apache.cordova.file" /> -->
 	<!-- <gap:plugin name="org.apache.cordova.file-transfer" /> -->
 	<!-- <gap:plugin name="org.apache.cordova.media-capture" /> -->
