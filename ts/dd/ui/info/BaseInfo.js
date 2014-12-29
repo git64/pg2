@@ -6,7 +6,9 @@ var __extends = this.__extends || function (d, b) {
 };
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
+        var info;
         (function (info) {
             var BaseInfo = (function (_super) {
                 __extends(BaseInfo, _super);
@@ -24,12 +26,9 @@ var dd;
                     enumerable: true,
                     configurable: true
                 });
-
                 return BaseInfo;
             })(dd.ui.BaseUI);
             info.BaseInfo = BaseInfo;
-        })(ui.info || (ui.info = {}));
-        var info = ui.info;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+        })(info = ui.info || (ui.info = {}));
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));

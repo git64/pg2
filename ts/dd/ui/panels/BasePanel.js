@@ -6,7 +6,9 @@ var __extends = this.__extends || function (d, b) {
 };
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
+        var panels;
         (function (panels) {
             var BasePanel = (function (_super) {
                 __extends(BasePanel, _super);
@@ -18,8 +20,6 @@ var dd;
                 return BasePanel;
             })(dd.ui.BaseUI);
             panels.BasePanel = BasePanel;
-        })(ui.panels || (ui.panels = {}));
-        var panels = ui.panels;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+        })(panels = ui.panels || (ui.panels = {}));
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));

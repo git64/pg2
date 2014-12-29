@@ -6,6 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
         (function (IconSize) {
             IconSize[IconSize["small"] = 0] = "small";
@@ -13,7 +14,6 @@ var dd;
             IconSize[IconSize["large"] = 2] = "large";
         })(ui.IconSize || (ui.IconSize = {}));
         var IconSize = ui.IconSize;
-
         var IconSource = (function () {
             function IconSource() {
             }
@@ -74,11 +74,10 @@ var dd;
             return IconSource;
         })();
         ui.IconSource = IconSource;
-
         var Icon = (function (_super) {
             __extends(Icon, _super);
             function Icon(source) {
-                if (typeof source === "undefined") { source = null; }
+                if (source === void 0) { source = null; }
                 _super.call(this);
                 this._source = null;
                 this._size = 1 /* medium */;
@@ -93,7 +92,6 @@ var dd;
                 set: function (value) {
                     if (this._size == value)
                         return;
-
                     this.element.removeClass(IconSize[this._size]);
                     this._size = value;
                     this.element.addClass(IconSize[this._size]);
@@ -101,8 +99,6 @@ var dd;
                 enumerable: true,
                 configurable: true
             });
-
-
             Object.defineProperty(Icon.prototype, "source", {
                 get: function () {
                     return this._source;
@@ -119,10 +115,8 @@ var dd;
                 enumerable: true,
                 configurable: true
             });
-
             return Icon;
-        })(dd.ui.BaseUI);
+        })(ui.BaseUI);
         ui.Icon = Icon;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));

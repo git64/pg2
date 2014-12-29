@@ -1,4 +1,3 @@
-
 // TEST
 var dd;
 (function (dd) {
@@ -9,9 +8,7 @@ var dd;
             console.log("test");
             console.log(window.isDeviceReady);
             if (!window.isDeviceReady)
-                document.addEventListener("deviceready", function () {
-                    return _this.handleDeviceReady();
-                });
+                document.addEventListener("deviceready", function () { return _this.handleDeviceReady(); });
             else
                 this.handleDeviceReady();
         }
@@ -24,7 +21,6 @@ var dd;
     })();
     dd.Application = Application;
 })(dd || (dd = {}));
-
 $(window).ready(function () {
     new dd.Application();
 });

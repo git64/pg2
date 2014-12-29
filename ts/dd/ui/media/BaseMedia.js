@@ -6,7 +6,9 @@ var __extends = this.__extends || function (d, b) {
 };
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
+        var media;
         (function (media) {
             var BaseMedia = (function (_super) {
                 __extends(BaseMedia, _super);
@@ -17,8 +19,6 @@ var dd;
                 return BaseMedia;
             })(dd.ui.BaseUI);
             media.BaseMedia = BaseMedia;
-        })(ui.media || (ui.media = {}));
-        var media = ui.media;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+        })(media = ui.media || (ui.media = {}));
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));

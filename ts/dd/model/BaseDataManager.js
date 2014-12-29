@@ -1,5 +1,6 @@
 var dd;
 (function (dd) {
+    var model;
     (function (model) {
         var BaseDataManager = (function () {
             function BaseDataManager() {
@@ -9,6 +10,5 @@ var dd;
             return BaseDataManager;
         })();
         model.BaseDataManager = BaseDataManager;
-    })(dd.model || (dd.model = {}));
-    var model = dd.model;
+    })(model = dd.model || (dd.model = {}));
 })(dd || (dd = {}));

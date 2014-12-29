@@ -4,37 +4,33 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+//SOURCE based on: https://developers.google.com/youtube/iframe_api_reference?hl=de-DE
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
-        //SOURCE based on: https://developers.google.com/youtube/iframe_api_reference?hl=de-DE
+        var media;
         (function (media) {
             var VideoPlayer = (function (_super) {
                 __extends(VideoPlayer, _super);
                 function VideoPlayer() {
                     _super.call(this);
                     this.element.addClass("dd-ui-media-video-player");
-
                     this._container = $("<div></div>");
                     this.element.append(this._container);
                 }
                 VideoPlayer.prototype.onClick = function () {
                     this.play();
                 };
-
                 VideoPlayer.prototype.play = function () {
                 };
-
                 VideoPlayer.prototype.stop = function () {
                 };
-
                 VideoPlayer.prototype.pause = function () {
                 };
                 return VideoPlayer;
             })(dd.ui.media.BaseMedia);
             media.VideoPlayer = VideoPlayer;
-        })(ui.media || (ui.media = {}));
-        var media = ui.media;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+        })(media = ui.media || (ui.media = {}));
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));

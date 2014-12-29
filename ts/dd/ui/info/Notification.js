@@ -6,7 +6,9 @@ var __extends = this.__extends || function (d, b) {
 };
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
+        var info;
         (function (info) {
             var Notification = (function (_super) {
                 __extends(Notification, _super);
@@ -15,29 +17,22 @@ var dd;
                     _super.call(this, message);
                     this.element.text(message);
                     this.element.addClass("dd-ui-info-notification");
-                    this.element.bind("click.notification", function (evt) {
-                        return _this.handleClick(evt);
-                    });
+                    this.element.bind("click.notification", function (evt) { return _this.handleClick(evt); });
                     this.signalAdded.add(this.onAdded, this);
                     //            this.signalTick.once(this.onTick, this);
                 }
                 Notification.prototype.onTick = function () {
                     console.log("TICK");
                 };
-
                 Notification.prototype.onAdded = function (target, parent) {
                     console.log("ADDED");
                 };
-
                 Notification.prototype.handleClick = function (evt) {
                     var _this = this;
-                    this.element.slideUp(300, function () {
-                        return _this.dispose();
-                    });
+                    this.element.slideUp(300, function () { return _this.dispose(); });
                     evt.stopPropagation();
                     return false;
                 };
-
                 Notification.prototype.dispose = function () {
                     this.element.unbind("click.notification");
                     _super.prototype.dispose.call(this);
@@ -45,8 +40,6 @@ var dd;
                 return Notification;
             })(dd.ui.info.BaseInfo);
             info.Notification = Notification;
-        })(ui.info || (ui.info = {}));
-        var info = ui.info;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+        })(info = ui.info || (ui.info = {}));
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));

@@ -6,7 +6,9 @@ var __extends = this.__extends || function (d, b) {
 };
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
+        var info;
         (function (info) {
             var Toast = (function (_super) {
                 __extends(Toast, _super);
@@ -18,12 +20,9 @@ var dd;
                     var _this = this;
                     var msg = $("<div>" + this.message + "</div>");
                     msg.addClass("toast");
-                    msg.click(function (evt) {
-                        return _this.onClick(evt);
-                    });
+                    msg.click(function (evt) { return _this.onClick(evt); });
                     return msg;
                 };
-
                 Toast.prototype.onClick = function (evt) {
                     this.element.slideUp(300, function () {
                         $(this).remove();
@@ -34,8 +33,6 @@ var dd;
                 return Toast;
             })(dd.ui.info.BaseInfo);
             info.Toast = Toast;
-        })(ui.info || (ui.info = {}));
-        var info = ui.info;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+        })(info = ui.info || (ui.info = {}));
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));

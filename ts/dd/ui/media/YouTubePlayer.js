@@ -4,10 +4,12 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+//SOURCE based on: https://developers.google.com/youtube/iframe_api_reference?hl=de-DE
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
-        //SOURCE based on: https://developers.google.com/youtube/iframe_api_reference?hl=de-DE
+        var media;
         (function (media) {
             var YouTubePlayer = (function (_super) {
                 __extends(YouTubePlayer, _super);
@@ -19,9 +21,7 @@ var dd;
                     this._id = "dd-ui-media-youtube-player-" + YouTubePlayer.ID++;
                     this._container = $("<div id='" + this._id + "'></div>");
                     this.element.append(this._container);
-
                     this.element.css({ left: "50px", top: "50px" });
-
                     this.loadScript();
                 }
                 YouTubePlayer.prototype.loadScript = function () {
@@ -31,7 +31,6 @@ var dd;
                         this.create();
                         return;
                     }
-
                     var th = this;
                     $.ajax({
                         url: "https://www.youtube.com/iframe_api",
@@ -43,65 +42,46 @@ var dd;
                         }
                     });
                 };
-
                 YouTubePlayer.prototype.create = function () {
                     var _this = this;
                     var options = {};
                     options.width = this.stage.stageWidth;
                     options.height = 270;
-
-                    //            options.videoId = 'M7lc
+                    //            options.videoId = 'M7lc            
                     var playerVars = {};
-
                     //            playerVars.showinfo = 0;
                     //            playerVars.controls = 0;
                     //            playerVars.showsearch = 0;
                     //            playerVars.rel = 0;
                     options.playerVars = playerVars;
-
                     var events = {};
-                    events.onReady = function (e) {
-                        return _this.onPlayerReady(e);
-                    };
-                    events.onStateChange = function (e) {
-                        return _this.onPlayerStateChange(e);
-                    };
+                    events.onReady = function (e) { return _this.onPlayerReady(e); };
+                    events.onStateChange = function (e) { return _this.onPlayerStateChange(e); };
                     options.events = events;
-
                     this._player = new YT.Player(this._id, options);
-
-                    this.element.click(function () {
-                        return _this.onClick();
-                    });
+                    this.element.click(function () { return _this.onClick(); });
                 };
-
                 YouTubePlayer.prototype.onClick = function () {
                     this.play();
                 };
-
                 YouTubePlayer.prototype.onPlayerReady = function (e) {
                     this._player.loadVideoById('M7lc1UVf-VE');
                     this._container.focus();
                     //this._player.playVideo();
                 };
-
                 YouTubePlayer.prototype.onPlayerStateChange = function (e) {
                     console.log(e);
                     this.stage.notify(e);
                     if (e.data == YT.PlayerState.PLAYING && !this._done) {
                         this._done = true;
-                        //this.play();
                     }
                 };
-
                 YouTubePlayer.prototype.play = function () {
                     this._player.playVideo();
                 };
-
                 YouTubePlayer.prototype.stop = function () {
                     this._player.stopVideo();
                 };
-
                 YouTubePlayer.prototype.pause = function () {
                     this._player.pauseVideo();
                 };
@@ -109,8 +89,6 @@ var dd;
                 return YouTubePlayer;
             })(dd.ui.BaseUI);
             media.YouTubePlayer = YouTubePlayer;
-        })(ui.media || (ui.media = {}));
-        var media = ui.media;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+        })(media = ui.media || (ui.media = {}));
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));

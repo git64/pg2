@@ -1,5 +1,6 @@
 var dd;
 (function (dd) {
+    var ui;
     (function (ui) {
         var BaseUI = (function () {
             function BaseUI() {
@@ -18,7 +19,6 @@ var dd;
                 enumerable: true,
                 configurable: true
             });
-
             Object.defineProperty(BaseUI.prototype, "parent", {
                 get: function () {
                     return this._parent;
@@ -26,7 +26,6 @@ var dd;
                 enumerable: true,
                 configurable: true
             });
-
             Object.defineProperty(BaseUI.prototype, "stage", {
                 get: function () {
                     return BaseUI.stage;
@@ -34,7 +33,6 @@ var dd;
                 enumerable: true,
                 configurable: true
             });
-
             Object.defineProperty(BaseUI.prototype, "element", {
                 get: function () {
                     return this._element;
@@ -42,7 +40,6 @@ var dd;
                 enumerable: true,
                 configurable: true
             });
-
             BaseUI.prototype.add = function (baseUI) {
                 //            if(baseUI._parent != this)
                 //                baseUI._parent.signalAdded(baseUI, this);
@@ -51,13 +48,11 @@ var dd;
                 baseUI.signalAdded.dispatch(baseUI, this);
                 return baseUI;
             };
-
             BaseUI.prototype.remove = function () {
                 this._element.remove();
                 this.signalRemoved.dispatch(this, this._parent);
                 this._parent = null;
             };
-
             BaseUI.prototype.dispose = function () {
                 this.remove();
                 this._element = null;
@@ -66,6 +61,5 @@ var dd;
             return BaseUI;
         })();
         ui.BaseUI = BaseUI;
-    })(dd.ui || (dd.ui = {}));
-    var ui = dd.ui;
+    })(ui = dd.ui || (dd.ui = {}));
 })(dd || (dd = {}));
