@@ -1,4 +1,4 @@
-/// <reference path='ts/definitions/jquery-1.10.2.d.ts' />
+/// <reference path='ts/definitions/jquery-1.10.x-2.0.x.d.ts' />
 /// <reference path='ts/definitions/phonegap.d.ts' />
 
 
@@ -15,4 +15,4 @@
 /// <reference path="ts/dd/ui/info/Toast.ts" />
 /// <reference path="ts/dd/ui/panels/BasePanel.ts" />
 /// <reference path="ts/dd/ui/panels/TestPanel.ts" />
-/// <reference path="ts/dd/Application.ts" />
+/// <reference path="ts/qb/Application.ts" />
