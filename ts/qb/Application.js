@@ -1,4 +1,3 @@
-// TEST
 var dd;
 (function (dd) {
     var Application = (function () {

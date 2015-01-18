@@ -1,9 +1,7 @@
-//declare var isDeviceReady: boolean;
+
 interface Window {
     isDeviceReady: boolean;
 }
-
-// TEST
 
 module dd {
     export class Application {
