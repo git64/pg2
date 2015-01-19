@@ -15,7 +15,7 @@ var dd;
         }
         Application.prototype.handleDeviceReady = function () {
             console.log("READY");
-            $(".open-test-panel").append("<input type='text' list='browsers' style='width:100%' /><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
+            $(".open-test-panel").append("<input type='text' list='browsers' style='width:70%; margin:10px auto;' /><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
             /*
             if ($(".open-test-panel").length > 0)
                 new dd.ui.panels.TestPanel();
