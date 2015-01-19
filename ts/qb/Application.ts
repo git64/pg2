@@ -26,7 +26,7 @@ module dd {
         
             console.log("READY");
             
-            $(".open-test-panel").append("<input type='text' list='browsers' /><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
+            $(".open-test-panel").append("<input type='text' list='browsers' style='width:100%' /><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
             
             
             /*
