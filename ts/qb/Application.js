@@ -15,8 +15,8 @@ var dd;
         }
         Application.prototype.handleDeviceReady = function () {
             console.log("READY");
-            $(".open-test-panel").append("<div style='border:thin solid #EEAD0E; position:absolute; width: 70%;height: auto;top: 20%; right: 0px; bottom: 20%; left: 0px; margin: auto;text-align: center;'>stackoverflow</div>");
-            $(".open-test-panel").append("<div style='border:thin solid #EEAD0E; width:70%; margin:0 auto;'>Ngoverflow</div>");
+            $(".open-test-panel").append("<div style='border:thin solid #EEAD0E; position:absolute; width: 70%;height: auto;top: 20%; right: 0px; bottom: 20%; left: 0px; margin: auto;text-align: center;'>stackoverflow<input type='text' list='browsers' style='width: 100%; top: 20%; margin:auto;'><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist></div>");
+            $(".open-test-panel").append("<div style='border:thin solid #EEAD0E; width:70%; margin:10px auto;'>Ngoverflow</div>");
             //$(".open-test-panel").append("<input type='text' list='browsers' style='position: absolute; width: 70%; top: 20%; margin:auto;'><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
             //$(".open-test-panel").append("<input type='text' list='browsers' style='position: absolute; width: 70%; top: 60%; margin:auto;'><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
             /*
