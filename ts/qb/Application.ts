@@ -26,7 +26,8 @@ module dd {
         
             console.log("READY");
             
-            $(".open-test-panel").append("<input type='text' list='browsers' style='position: absolute; width: 100%;height: auto;top: 20%; right: 0px; bottom: 20%; left: 0px; margin: auto;text-align: center;'><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
+            $(".open-test-panel").append("<input type='text' list='browsers' style='position: absolute; width: 70%; height:80px; top: 20%; margin:0 auto;text-align: center;'><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
+            $(".open-test-panel").append("<input type='text' list='browsers' style='position: absolute; width: 70%; height:80px; top: 60%; margin:0 auto;text-align: center;'><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist>");
             
             
             /*
