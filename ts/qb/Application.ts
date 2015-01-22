@@ -26,7 +26,7 @@ module dd {
         
             console.log("READY");
             
-            $(".open-test-panel").append("<div class='test' style='border:thin solid #EEAD0E; position:absolute;width: 70%;margin: auto;'></div>");
+            $(".open-test-panel").append("<div class='test' style='border:thin solid #EEAD0E;height: auto; position:absolute;width: 70%;margin: auto;'></div>");
             
             $("test").append("<div style='border:thin solid #EEAD0E; position:absolute; width: 70%;height: auto;top: 20%; right: 0px; bottom: 20%; left: 0px; margin: auto;text-align: center;'>stackoverflow<input type='text' list='browsers' style='width: 80%; top: 20%; margin:auto;'><datalist id='browsers'><option value='Internet Explorer'><option value='Firefox'></datalist></div>");
             $("test").append("<div style='border:thin solid #EEAD0E; width:70%; margin:10px auto;'>Ngoverflow</div>");
