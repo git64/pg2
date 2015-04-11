@@ -26,7 +26,7 @@
 	<!-- <preference name="auto-hide-splash-screen" value="false" /> -->
 	<!-- <preference name="splash-screen-duration" value="3000" />  --> 
 
-	<preference name="phonegap-version" value="3.6.3" />
+	<preference name="phonegap-version" value="3.7.0" />
 	
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="org.apache.cordova.splashscreen" />
