@@ -29,6 +29,29 @@
 
 <!-- Script -->
 <!--  <script type="text/javascript" src="ts/qb/Application.js"></script> div bsp.: <div id="application" class="open-test-panel"></div> -->
+ 
+ <script>
+ 
+ $( document ).on( "pageinit", "#home", function() {
+	    $( document ).on( "swipeleft swiperight", "#home", function( e ) {
+	        // We check if there is no open panel on the page because otherwise
+	        // a swipe to close the left panel would also open the right panel (and v.v.).
+	        // We do this by checking the data that the framework stores on the page element (panel: open).
+	        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+	            if ( e.type === "swipeleft"  ) {
+	               // $( "#right-panel" ).panel( "open" );
+	            } else if ( e.type === "swiperight" ) {
+	                $( "#mypanel" ).panel( "open" );
+	            }
+	        }
+	    });
+	});
+
+</script>
+ 
+ 
+ 
+ 
   
 </head> 
 <body>
@@ -51,8 +74,8 @@
     <div data-role="footer" data-theme="a" data-position="fixed" data-id="footer">
         <div data-role="navbar">
             <ul>
-                <li><a href="#about" data-transition="slide">page2</a></li>
-                <li><a href="#about" data-transition="slide">page3</a></li>
+                <li><a href="#about">page2</a></li>
+                <li><a href="#about">page3</a></li>
             </ul>
         </div>
     </div>
@@ -70,8 +93,8 @@
     <div data-role="footer" data-theme="a" data-position="fixed" data-id="footer">
         <div data-role="navbar">
             <ul>
-                <li><a href="#home" data-transition="slide">page2</a></li>
-                <li><a href="#home" data-transition="slide">page3</a></li>
+                <li><a href="#home">page2</a></li>
+                <li><a href="#home">page3</a></li>
             </ul>
         </div>
     </div>
