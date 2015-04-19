@@ -55,7 +55,7 @@
 	    		$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
 	    		$("#button1").button("refresh");
 	    		
-	    		$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a><br>');
+	    		$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '" target="_new">'+new Date+'</a><br>');
 	    		
 	    		
 	    		//
@@ -98,17 +98,11 @@
 	    	    
 	    	}
 	    	
-	    	//$( "#button1" ).loader( );
-	    	$.mobile.loading( "show" , {
-	    		text: 'foo',
-	    		textVisible: true,
-	    		theme: 'z',
-	    		html: ""
-	    	}) ;
+	    	$.mobile.showPageLoadingMsg();
 	    	
-	    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true });
+	    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 120000, enableHighAccuracy: true }); //zwei minuten timeout
 	    	
-	    	$.mobile.loading( "hide" ) ;
+	    	$.mobile.hidePageLoadingMsg();
 	    	
 	    	
 	    	//$( "#button1" ).loader( "hide" );
