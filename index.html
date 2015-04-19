@@ -98,11 +98,7 @@
 	    	    
 	    	}
 	    	
-	    	$.mobile.showPageLoadingMsg();
-	    	
-	    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 120000, enableHighAccuracy: true }); //zwei minuten timeout
-	    	
-	    	$.mobile.hidePageLoadingMsg();
+	    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
 	    	
 	    	
 	    	//$( "#button1" ).loader( "hide" );
