@@ -99,7 +99,16 @@
 	    	}
 	    	
 	    	//$( "#button1" ).loader( );
-	    	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	    	$.mobile.loading( "show" , {
+	    		text: 'foo',
+	    		textVisible: true,
+	    		theme: 'z',
+	    		html: ""
+	    	}) ;
+	    	
+	    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true });
+	    	
+	    	$.mobile.loading( "hide" ) ;
 	    	
 	    	
 	    	//$( "#button1" ).loader( "hide" );
@@ -206,7 +215,7 @@
     	<!-- content -->
     	<div data-role="content">
       		<input id="button1" type="button" data-role="button" data-icon="grid" value="Button">
-      		<input id="button2" type="button" value="Click me" onclick="msg()" />
+      		<!-- <input id="button2" type="button" value="Click me" onclick="msg()" /> -->
       		<div id="result"></div>
     	</div>
     	
