@@ -6,7 +6,10 @@
 	
 	<author href="https://github.com/git64/pg2" email="github2@ezisonline.de">DannDann</author>
 	
-	<access origin="*" />
+	<feature name="Geolocation">
+    	<param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+	</feature>
+    
 	<!-- <feature name="http://api.phonegap.com/1.0/device" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/camera" /> -->
