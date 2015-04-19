@@ -127,7 +127,7 @@
  		$("#button2").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
  		$("#button2").button("refresh");
  		
- 		$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a><br>');
+ 		$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a><br>' + position.coords.accuracy + '<br>');
  		
  		
  		//
