@@ -92,8 +92,10 @@
 	    	// onError Callback receives a PositionError object
 	    	//
 	    	function onError(error) {
-	    	    alert('code: '    + error.code    + '\n' +
-	    	          'message: ' + error.message + '\n');
+	    		
+	    		$("#result").append('code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br><br>');
+	    		
+	    	    
 	    	}
 	    	
 	    	//$( "#button1" ).loader( );
