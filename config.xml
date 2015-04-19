@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.qbsag.playground1" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.locationTag.playground1" version="1.0.0">
 	
-	<name>QuickBSAG</name>
-	<description>QuickBSAG</description>
+	<name>locationTag</name>
+	<description>locationTag</description>
 	
-	<author href="https://github.com/git64/pg1" email="github2@ezisonline.de">DannDann</author>
+	<author href="https://github.com/git64/pg2" email="github2@ezisonline.de">DannDann</author>
 	
 	<access origin="*" />
 	<!-- <feature name="http://api.phonegap.com/1.0/device" /> -->
