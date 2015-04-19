@@ -4,7 +4,7 @@
 <html>
 <head>
 
-<title>QuickBSAG</title>
+<title>locationTag</title>
 
 <!-- html configuration -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,6 +32,8 @@
  <script>
  
  $( document ).on( "pageinit", "#home", function() {
+	  
+	 
 	    $( document ).on( "swiperight", "#home", function( e ) {
 	        // We check if there is no open panel on the page because otherwise
 	        // a swipe to close the left panel would also open the right panel (and v.v.).
@@ -44,8 +46,72 @@
 	            }
 	        }
 	    });
-	});
+	    
+	    $("#button1").click( function() {
+			
+	    	
+	    	var onSuccess = function(position) {
+	    		
+	    		$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
+	    		$("#button1").button("refresh");
+	    		
+	    		$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a><br>');
+	    		
+	    		
+	    		//
+	    		//$("#result").append('<a href="https://google.com/maps/place/' + position.coords.latitude + ',' + position.coords.longitude + '">'+new Date+'</a><br>');
+	    		
+	    		//(position.coords.latitude + ' ' + position.coords.longitude + '<br>')
+	    		
+	    		//<a href='https://google.com/maps/place/' + position.coords.latitude + ',' + position.coords.longitude + '"'>page2</a>
+	    		
+	    		//result
+	    		
+	    		
+	    		//$('#button1').prev('span').find('span.ui-btn-text').text("Next Text"); 
+	    		
+	    		//$("#button1 .ui-btn-text").text("Mark New");
+	    		
+	    		//$("#button1").prop('value', 'result:');
+	    		
+	    		//$("span", this).text("My NEW Text");
+	    		//$("#button1 .ui-btn-text").text("NewText");
+	    		//$('#button1').text('Ok').button('refresh');
+	    		
+	  			/* alert('Latitude: '          + position.coords.latitude          + '\n' +
+	    	          'Longitude: '         + position.coords.longitude         + '\n' +
+	    	          'Altitude: '          + position.coords.altitude          + '\n' +
+	    	          'Accuracy: '          + position.coords.accuracy          + '\n' +
+	    	          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+	    	          'Heading: '           + position.coords.heading           + '\n' +
+	    	          'Speed: '             + position.coords.speed             + '\n' +
+	    	          'Timestamp: '         + position.timestamp                + '\n'); */
+	    		
+	    	};
 
+	    	// onError Callback receives a PositionError object
+	    	//
+	    	function onError(error) {
+	    	    alert('code: '    + error.code    + '\n' +
+	    	          'message: ' + error.message + '\n');
+	    	}
+	    	
+	    	$( "#button1" ).loader( );
+	    	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	    	
+	    	
+	    	$( "#button1" ).loader( "hide" );
+	    	
+	    	
+	    	
+	    	
+	    });
+	    
+	});
+ 
+ 
+ 
+ 
 </script>
  
  
@@ -68,13 +134,13 @@
 	    <div data-role="header" data-theme="b" data-position="fixed" data-id="homeheader" id="homeheader">
 	      <!--  <a href="#home" data-icon="home" data-iconpos="notext">Home</a> -->
 	      <a href="#mypanel" data-icon="grid" data-iconpos="notext">Panel</a>
-	      <h1>QuickBSAG</h1>
+	      <h1>locationTag</h1>
 	    </div>
     	
     	<!-- content -->
     	<div data-role="content">
-      		<p>Hello world!</p>
-      		<a href="#mypanel">Open panel</a>
+      		<input id="button1" type="button" data-role="button" data-icon="grid" value="Button">
+      		<div id="result"></div>
     	</div>
     	
     	<!-- footer -->
