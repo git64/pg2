@@ -145,52 +145,40 @@
 				
 					if (!refresh) {
 						// Loading the initial content
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						
+						
 					} else if (refresh && !next_page) {
 						// Refreshing the content
 						
-						
+						console.log('Refreshing the content');
 						
 						var onSuccess = function(position) {
 				    		
 				    		//$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
 				    		//$("#button1").button("refresh");
 				    		
-				    		$('#wrapper > #scroller > ul').html('');
-				    		$('#wrapper > #scroller > ul').append('<li><a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
-				    		$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+				    		console.log('Refreshing the content - onSuccess');
+				    		$('#wrapper > #scroller > ul').prepend('<li><a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
+				    		
 				    	};
 
 				    	function onError(error) {
 				    		
-				    		$('#wrapper > #scroller > ul').html('');
-				    		$('#wrapper > #scroller > ul').append('<li>code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br></li>');
-				    		$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+				    		console.log('Refreshing the content - onError');
+				    		$('#wrapper > #scroller > ul').prepend('<li>code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br></li>');
+				    		
 				    	}
 				    	
 				    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
@@ -324,11 +312,11 @@
 					scroll_in_progress = true;
 					
 					if ($('#wrapper ul > li').length >= items_per_page) {
-						if (this.y >= 5 && pullDownEl && !pullDownEl.className.match('flip')) {
+						if (this.y >= 50 && pullDownEl && !pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown flip';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh';
 							this.minScrollY = 0;
-						} else if (this.y <= 5 && pullDownEl && pullDownEl.className.match('flip')) {
+						} else if (this.y <= 50 && pullDownEl && pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh';
 							this.minScrollY = -pullDownOffset;
@@ -543,7 +531,7 @@
 								<span class="pullDownIcon">&nbsp;</span>
 								<span class="pullDownLabel" >Pull down to refresh</span>
 							</div>
-							<ul data-role="listview"><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row Refreshed</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li><li>Pretty row X</li></ul>
+							<ul data-role="listview"></ul>
 							<div class="pullUp"></div>
 						</div>
 					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="position: absolute; z-index: 9999; width: 7px; bottom: 2px; top: 2px; right: 1px; overflow: hidden; pointer-events: none; transform: translateZ(0px); transition-duration: 500ms; opacity: 0;"><div class="iScrollIndicator" style="box-sizing: border-box; position: absolute; background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 3px; width: 100%; transition-duration: 0ms; display: block; height: 250px; transform: translate(0px, 24px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);"></div></div></div>
