@@ -55,28 +55,14 @@
 	    		$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
 	    		$("#button1").button("refresh");
 	    		
-	    		$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '" target="_new">'+new Date+'</a><br>');
+	    		$("#result").append("<a href='#' onclick='window.open('http://www.openstreetmap.org/', '_system');'>www.openstreetmap.org</a>");
 	    		
 	    		
-	    		//
-	    		//$("#result").append('<a href="https://google.com/maps/place/' + position.coords.latitude + ',' + position.coords.longitude + '">'+new Date+'</a><br>');
-	    		
-	    		//(position.coords.latitude + ' ' + position.coords.longitude + '<br>')
-	    		
-	    		//<a href='https://google.com/maps/place/' + position.coords.latitude + ',' + position.coords.longitude + '"'>page2</a>
-	    		
-	    		//result
 	    		
 	    		
-	    		//$('#button1').prev('span').find('span.ui-btn-text').text("Next Text"); 
+	    		//$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '" target="_new">'+new Date+'</a><br>');
 	    		
-	    		//$("#button1 .ui-btn-text").text("Mark New");
 	    		
-	    		//$("#button1").prop('value', 'result:');
-	    		
-	    		//$("span", this).text("My NEW Text");
-	    		//$("#button1 .ui-btn-text").text("NewText");
-	    		//$('#button1').text('Ok').button('refresh');
 	    		
 	  			/* alert('Latitude: '          + position.coords.latitude          + '\n' +
 	    	          'Longitude: '         + position.coords.longitude         + '\n' +
