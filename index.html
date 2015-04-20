@@ -142,7 +142,7 @@
 				// Here you should place your AJAX request to fetch the relevant content (e.g. $.post(...))
 				
 				console.log(refresh, next_page);
-				setTimeout(function() { // This immitates the CALLBACK of your AJAX function
+				
 					if (!refresh) {
 						// Loading the initial content
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
@@ -157,21 +157,44 @@
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 					} else if (refresh && !next_page) {
 						// Refreshing the content
-						$('#wrapper > #scroller > ul').html('');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
+						
+						
+						
+						var onSuccess = function(position) {
+				    		
+				    		//$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
+				    		//$("#button1").button("refresh");
+				    		
+				    		$('#wrapper > #scroller > ul').html('');
+				    		$('#wrapper > #scroller > ul').append('<li><a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
+				    		$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+				    	};
+
+				    	function onError(error) {
+				    		
+				    		$('#wrapper > #scroller > ul').html('');
+				    		$('#wrapper > #scroller > ul').append('<li>code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br></li>');
+				    		$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+				    	}
+				    	
+				    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
+						
 					} else if (refresh && next_page) {
 						// Loading the next-page content and refreshing
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
@@ -203,7 +226,7 @@
 						trigger_myScroll();
 						
 					}
-				}, 1000);
+				
 				
 			};
 			
@@ -421,7 +444,7 @@
 			bottom: 48px;
 			left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
 			width: 100%;
-			background: #ccc;
+			background: #CD235C;
 			overflow: hidden;
 		}
 		
@@ -510,8 +533,8 @@
     	
     	<!-- content -->
     	<div data-role="content">
-      		<!-- <input id="button1" type="button" data-role="button" data-icon="grid" value="Button">
-      		<div id="result"></div> -->
+      		<!--  <input id="button1" type="button" data-role="button" data-icon="grid" value="Button">
+      		<div id="result"></div> --> 
       		
       		
 		      		<div style="" id="wrapper" data-iscroll>
