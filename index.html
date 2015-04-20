@@ -55,7 +55,10 @@
 	    		$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
 	    		$("#button1").button("refresh");
 	    		
-	    		$("#result").append("<a href='#' onclick='window.open('http://www.openstreetmap.org/', '_system');'>www.openstreetmap.org</a>");
+	    		// ios : $("#result").append("<a href='#' onclick='window.open('http://www.openstreetmap.org/', '_system');'>www.openstreetmap.org</a>");
+	    		
+	    		$("#result").append("<a href='#' onclick='navigator.app.loadUrl('http://www.openstreetmap.org/', { openExternal:true });'>www.openstreetmap.org</a>");
+
 	    		
 	    		
 	    		
