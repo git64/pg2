@@ -122,6 +122,32 @@
 	    
 	    loaded(); //iscroll
 	    
+	    $('#addnewinput').keypress(function(event) {
+	        if (event.keyCode == 13) {
+	            
+	        	var onSuccess = function(position) {
+		    		
+		    		//$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
+		    		//$("#button1").button("refresh");
+		    		
+		    		console.log('Refreshing the content - onSuccess');
+		    		$('#wrapper > #scroller > ul').prepend('<li>' + $('#addnewinput').val() + ' // <a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
+		    		
+		    		
+		    		
+		    	};
+
+		    	function onError(error) {
+		    		
+		    		console.log('Refreshing the content - onError');
+		    		$('#wrapper > #scroller > ul').prepend('<li>code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br></li>');
+		    		
+		    	}
+		    	
+		    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
+	        	
+	        }
+	    });
 	    
  }	    
 	    /* <iscroll>
@@ -142,7 +168,7 @@
 				// Here you should place your AJAX request to fetch the relevant content (e.g. $.post(...))
 				
 				console.log(refresh, next_page);
-				setTimeout(function() { // This immitates the CALLBACK of your AJAX function
+				
 					if (!refresh) {
 						// Loading the initial content
 						$('#wrapper > #scroller > ul').append('<li>First...</li>');
@@ -164,6 +190,11 @@
 						
 						console.log('Refreshing the content');
 						
+						$('#addnewwrapper').show();
+						$('#addnewinput').focus();
+						
+						/*
+						
 						var onSuccess = function(position) {
 				    		
 				    		//$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
@@ -179,9 +210,9 @@
 				    		console.log('Refreshing the content - onError');
 				    		$('#wrapper > #scroller > ul').prepend('<li>code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br></li>');
 				    		
-				    	}
+				    	} */
 				    	
-				    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
+				    	//navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
 						
 					} else if (refresh && next_page) {
 						// Loading the next-page content and refreshing
@@ -215,7 +246,7 @@
 						
 					}
 				
-				}, 1000);
+				
 			};
 			
 			function pullDownAction() {
@@ -243,7 +274,7 @@
 				if (pullDownEl && pullDownEl.className.match('loading')) {
 					
 					pullDownEl.className = 'pullDown';
-					pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh';
+					pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to add new entry';
 					
 					myScroll.scrollTo(0, parseInt(pullUpOffset)*(-1), 200);
 					
@@ -314,11 +345,11 @@
 					if ($('#wrapper ul > li').length >= items_per_page) {
 						if (this.y >= 50 && pullDownEl && !pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown flip';
-							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh';
+							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to add new entry';
 							this.minScrollY = 0;
 						} else if (this.y <= 50 && pullDownEl && pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown';
-							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh';
+							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to add new entry';
 							this.minScrollY = -pullDownOffset;
 						}
 						
@@ -428,7 +459,7 @@
 		#wrapper {
 			position: absolute;
 			z-index: 1;
-			top: 0px;
+			top: 60px;
 			bottom: 48px;
 			left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
 			width: 100%;
@@ -523,13 +554,16 @@
     	<div data-role="content">
       		<!--  <input id="button1" type="button" data-role="button" data-icon="grid" value="Button">
       		<div id="result"></div> --> 
-      		
-      		
+      				
+      				<div style="display:none" id="addnewwrapper">
+      					<input type="text" name="name" id="addnewinput" value="">
+      				</div>
+      				
 		      		<div style="" id="wrapper" data-iscroll>
 						<div style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, -83px) translateZ(0px);" id="scroller">
 							<div class="pullDown">
 								<span class="pullDownIcon">&nbsp;</span>
-								<span class="pullDownLabel" >Pull down to refresh</span>
+								<span class="pullDownLabel" >Pull down to add new entry</span>
 							</div>
 							<ul data-role="listview"></ul>
 							<div class="pullUp"></div>
