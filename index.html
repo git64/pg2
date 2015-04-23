@@ -126,7 +126,7 @@
 	        if (event.keyCode == 13) {
 	            
 	        	var ivalue = $('#addnewinput').val();
-	        	$('#addnewinput').val(getting gps coordinates, pls wait ... ');
+	        	$('#addnewinput').val('getting gps coordinates, pls wait ... ');
 	        	
 	        	var onSuccess = function(position) {
 		    		
@@ -136,7 +136,9 @@
 		    		console.log('Refreshing the content - onSuccess');
 		    		$('#wrapper > #scroller > ul').prepend('<li>' + ivalue + ' // <a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
 		    		
-		    		
+		    		$('#addnewinput').val('');
+		    		$('#addnewwrapper').hide();
+		    		$("#wrapper").css({ top: '0px' });
 		    		
 		    	};
 
@@ -193,6 +195,7 @@
 						
 						console.log('Refreshing the content');
 						
+						$("#wrapper").css({ top: '60px' });
 						$('#addnewwrapper').show();
 						$('#addnewinput').focus();
 						
@@ -462,7 +465,7 @@
 		#wrapper {
 			position: absolute;
 			z-index: 1;
-			top: 60px;
+			top: 0px;
 			bottom: 48px;
 			left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
 			width: 100%;
