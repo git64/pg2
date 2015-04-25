@@ -44,12 +44,13 @@
 	 //Note: The ui object is empty but included for consistency with other events.
 	 //https://api.jquerymobile.com/page/#event-create
 	 
+	 /*
 	 $(document).on( "swiperight", "#home", function( e ) {
 		 if ( e.type === "swiperight"  ) {
          	$( "#mypanel" ).panel( "open" );
          } 
 		 
-	 });
+	 }); */
 	
 	 
 	 $(document).on( "click", "#button1", function( e ) {
@@ -135,10 +136,16 @@
 		    		
 		    		console.log('Refreshing the content - onSuccess');
 		    		
-		    		$('#wrapper > #scroller > ul').prepend('<li>' + ivalue + ' // <a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
+		    		var lurl = "http://www.openstreetmap.org/?mlat=" + position.coords.latitude + "&mlon=" + position.coords.longitude;
+		    		var lhref = "<a href=\"#\" onclick=\"window.open('" + lurl + "', '_system');\">" + ivalue + "</a>";
 		    		
-		    		//$('#wrapper > #scroller > ul').prepend('<li>' + ivalue + ' // <a href="#" onclick="window.open('http://www.kidzout.com', '_system');">www.kidzout.com</a></li>');
+		    		console.log(lhref);
 		    		
+		    		$('#wrapper > #scroller > ul').prepend('<li>' + lhref + '</li>');
+		    		
+		    		//$('#wrapper > #scroller > ul').prepend('<li>' + ivalue + ' // <a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
+		    		
+		    		//$('#wrapper > #scroller > ul').prepend("<li>" + ivalue + "<a href='#' onclick='window.open('http:www.kidzout.com', '_system');'>www.kidzout.com</a></li>");
 		    		//$('#wrapper > #scroller > ul').prepend('<li>' + ivalue + ' // <a href="#" onclick="window.open('http://www.kidzout.com', '_system');">www.kidzout.com</a></li>');
 		    		
 		    		$('#addnewinput').val('');
@@ -399,7 +406,7 @@
 			
 			
 			
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+			//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 			
 	     
 	     
