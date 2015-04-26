@@ -23,12 +23,10 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-
-
 <script type="text/javascript" src="libs/iscroll-probe.js"></script>
 
 <!-- Stylesheets -->
-<link type='text/css' rel='stylesheet' href='css/dd.ui.application.css'>
+<!--<link type='text/css' rel='stylesheet' href='css/dd.ui.application.css'>-->
 
 <!-- Script -->
 <!--  <script type="text/javascript" src="ts/qb/Application.js"></script> div bsp.: <div id="application" class="open-test-panel"></div> -->
@@ -40,86 +38,20 @@
  
  function onDeviceReady(event, ui) {
 	 
-	 
-	 //Note: The ui object is empty but included for consistency with other events.
-	 //https://api.jquerymobile.com/page/#event-create
-	 
-	 /*
-	 $(document).on( "swiperight", "#home", function( e ) {
-		 if ( e.type === "swiperight"  ) {
-         	$( "#mypanel" ).panel( "open" );
-         } 
-		 
-	 }); */
 	
-	 
-	 $(document).on( "click", "#button1", function( e ) {
+		$(document).on( "click", "#button1", function( e ) {
 		 			 
-		 	var onSuccess = function(position) {
-	    		
-	    		$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
-	    		$("#button1").button("refresh");
-	    		$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a><br>');
-	    		
-	    	};
-
-	    	function onError(error) {
-	    		$("#result").append('code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br><br>');
-	    	}
-	    	
-	    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
+		 /* alert('Latitude: '          + position.coords.latitude          + '\n' +
+		       'Longitude: '         + position.coords.longitude         + '\n' +
+		       'Altitude: '          + position.coords.altitude          + '\n' +
+		       'Accuracy: '          + position.coords.accuracy          + '\n' +
+		       'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+		       'Heading: '           + position.coords.heading           + '\n' +
+		       'Speed: '             + position.coords.speed             + '\n' +
+		       'Timestamp: '         + position.timestamp                + '\n'); */
 		
-	  });
+		 });
 	 
-	 
-	 
-	 
-	    $("#button15").click( function() {
-			
-	    	
-	    	var onSuccess = function(position) {
-	    		
-	    		$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
-	    		$("#button1").button("refresh");
-	    		
-	    		
-	    		$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a><br>');
-	    		
-	    		
-	    		//http://stackoverflow.com/questions/17887348/phonegap-open-link-in-browser/26036972#26036972
-	    		// ios : $("#result").append("<a href='#' onclick='window.open('http://www.openstreetmap.org/', '_system');'>www.openstreetmap.org</a>");
-	    		//$("#result").append("<a href='#' onclick='navigator.app.loadUrl('http://www.openstreetmap.org/', { openExternal:true });'>www.openstreetmap.org</a>");
-				//$("#result").append('<a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '" target="_new">'+new Date+'</a><br>');
-	    		
-	    		
-	    		
-	  			/* alert('Latitude: '          + position.coords.latitude          + '\n' +
-	    	          'Longitude: '         + position.coords.longitude         + '\n' +
-	    	          'Altitude: '          + position.coords.altitude          + '\n' +
-	    	          'Accuracy: '          + position.coords.accuracy          + '\n' +
-	    	          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-	    	          'Heading: '           + position.coords.heading           + '\n' +
-	    	          'Speed: '             + position.coords.speed             + '\n' +
-	    	          'Timestamp: '         + position.timestamp                + '\n'); */
-	    		
-	    	};
-
-	    	// onError Callback receives a PositionError object
-	    	//
-	    	function onError(error) {
-	    		
-	    		$("#result").append('code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br><br>');
-	    		
-	    	    
-	    	}
-	    	
-	    	
-	    	navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
-	    	
-	    	
-	    	
-	    });
-	    
 	    
 	    loaded(); //iscroll
 	    
@@ -131,33 +63,24 @@
 	        	
 	        	var onSuccess = function(position) {
 		    		
-		    		//$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
-		    		//$("#button1").button("refresh");
-		    		
 		    		console.log('Refreshing the content - onSuccess');
 		    		
 		    		var lurl = "http://www.openstreetmap.org/?mlat=" + position.coords.latitude + "&mlon=" + position.coords.longitude;
 		    		var lhref = "<a href=\"#\" onclick=\"window.open('" + lurl + "', '_system');\">" + ivalue + "</a>";
-		    		
 		    		console.log(lhref);
 		    		
-		    		$('#wrapper > #scroller > ul').prepend('<li>' + lhref + '</li>');
-		    		
-		    		//$('#wrapper > #scroller > ul').prepend('<li>' + ivalue + ' // <a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
-		    		
-		    		//$('#wrapper > #scroller > ul').prepend("<li>" + ivalue + "<a href='#' onclick='window.open('http:www.kidzout.com', '_system');'>www.kidzout.com</a></li>");
-		    		//$('#wrapper > #scroller > ul').prepend('<li>' + ivalue + ' // <a href="#" onclick="window.open('http://www.kidzout.com', '_system');">www.kidzout.com</a></li>');
+		    		$('#iscrollwrapper > #scroller > ul').prepend('<li>' + lhref + '</li>');
 		    		
 		    		$('#addnewinput').val('');
 		    		$('#addnewwrapper').hide();
-		    		$("#wrapper").css({ top: '0px' });
+		    		$("#iscrollwrapper").css({ top: '34px' });
 		    		
 		    	};
 
 		    	function onError(error) {
 		    		
 		    		console.log('Refreshing the content - onError');
-		    		$('#wrapper > #scroller > ul').prepend('<li>code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br></li>');
+		    		$('#iscrollwrapper > #scroller > ul').prepend('<li>code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br></li>');
 		    		
 		    	}
 		    	
@@ -167,13 +90,13 @@
 	    });
 	    
  }	    
+ 
+ 
+ 
 	    /* <iscroll>
 	     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
-
-	     
-	     
 
 			var items_per_page = 10;
 			var scroll_in_progress = false;
@@ -188,18 +111,18 @@
 				
 					if (!refresh) {
 						// Loading the initial content
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
-						$('#wrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
 						
 						
 					} else if (refresh && !next_page) {
@@ -207,45 +130,29 @@
 						
 						console.log('Refreshing the content');
 						
-						$("#wrapper").css({ top: '60px' });
+						$("#iscrollwrapper").css({ top: '100px' });
 						$('#addnewwrapper').show();
 						$('#addnewinput').focus();
 						
-						/*
-						
-						var onSuccess = function(position) {
-				    		
-				    		//$("#button1").prop('value', position.coords.latitude  + ' ' + position.coords.longitude);
-				    		//$("#button1").button("refresh");
-				    		
-				    		console.log('Refreshing the content - onSuccess');
-				    		$('#wrapper > #scroller > ul').prepend('<li><a href="http://www.openstreetmap.org/?mlat=' + position.coords.latitude + '&mlon=' + position.coords.longitude + '">'+new Date+'</a></li>');
-				    		
-				    	};
-
-				    	function onError(error) {
-				    		
-				    		console.log('Refreshing the content - onError');
-				    		$('#wrapper > #scroller > ul').prepend('<li>code: '    + error.code    + '<br>' + 'message: ' + error.message + '<br></li>');
-				    		
-				    	} */
-				    	
-				    	//navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true, maximumAge: 3000, timeout: 120000 }); //zwei minuten timeout
 						
 					} else if (refresh && next_page) {
 						// Loading the next-page content and refreshing
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>Pretty row X</li>');
 					}
 				
 					if (refresh) {
@@ -269,20 +176,20 @@
 			
 			function pullDownAction() {
 				load_content('refresh');
-				$('#wrapper > #scroller > ul').data('page', 1);
+				$('#iscrollwrapper > #scroller > ul').data('page', 1);
 				
 				// Since "topOffset" is not supported with iscroll-5
-				$('#wrapper > .scroller').css({top:0});
+				$('#iscrollwrapper > .scroller').css({top:0});
 				
 			}
 			function pullUpAction(callback) {
-				if ($('#wrapper > #scroller > ul').data('page')) {
-					var next_page = parseInt($('#wrapper > #scroller > ul').data('page'), 10) + 1;
+				if ($('#iscrollwrapper > #scroller > ul').data('page')) {
+					var next_page = parseInt($('#iscrollwrapper > #scroller > ul').data('page'), 10) + 1;
 				} else {
 					var next_page = 2;
 				}
 				load_content('refresh', next_page);
-				$('#wrapper > #scroller > ul').data('page', next_page);
+				$('#iscrollwrapper > #scroller > ul').data('page', next_page);
 				
 				if (callback) {
 					callback();
@@ -312,7 +219,7 @@
 					}
 					// Detects whether the momentum has stopped, and if it has reached the end - 200px of the scroller - it trigger the pullUpAction
 					setTimeout(function() {
-						if (myScroll.y <= (myScroll.maxScrollY + 200) && pullUpEl && !pullUpEl.className.match('loading')) {
+						if (myScroll.y <= (myScroll.maxScrollY + 400) && pullUpEl && !pullUpEl.className.match('loading')) {
 							$('.pullUp').addClass('loading').html('<span class="pullUpIcon">&nbsp;</span><span class="pullUpLabel">Loading...</span>');
 							pullUpAction();
 						} else if (pullActionDetect.count < pullActionDetect.limit) {
@@ -324,30 +231,30 @@
 			}
 			
 			function trigger_myScroll(offset) {
-				pullDownEl = document.querySelector('#wrapper .pullDown');
+				pullDownEl = document.querySelector('#iscrollwrapper .pullDown');
 				if (pullDownEl) {
 					pullDownOffset = pullDownEl.offsetHeight;
 				} else {
 					pullDownOffset = 0;
 				}
-				pullUpEl = document.querySelector('#wrapper .pullUp');	
+				pullUpEl = document.querySelector('#iscrollwrapper .pullUp');	
 				if (pullUpEl) {
 					pullUpOffset = pullUpEl.offsetHeight;
 				} else {
 					pullUpOffset = 0;
 				}
 				
-				if ($('#wrapper ul > li').length < items_per_page) {
+				if ($('#iscrollwrapper ul > li').length < items_per_page) {
 					// If we have only 1 page of result - we hide the pullup and pulldown indicators.
-					$('#wrapper .pullDown').hide();
-					$('#wrapper .pullUp span').hide();
+					$('#iscrollwrapper .pullDown').hide();
+					$('#iscrollwrapper .pullUp span').hide();
 					offset = 0;
 				} else if (!offset) {
 					// If we have more than 1 page of results and offset is not manually defined - we set it to be the pullUpOffset.
 					offset = pullUpOffset;
 				}
 				
-				myScroll = new IScroll('#wrapper', {
+				myScroll = new IScroll('#iscrollwrapper', {
 					probeType:1, tap:true, click:false, preventDefaultException:{tagName:/.*/}, mouseWheel:true, scrollbars:true, fadeScrollbars:true, interactiveScrollbars:false, keyBindings:false,
 					deceleration:0.0002,
 					startY:(parseInt(offset)*(-1))
@@ -360,12 +267,12 @@
 					
 					scroll_in_progress = true;
 					
-					if ($('#wrapper ul > li').length >= items_per_page) {
-						if (this.y >= 50 && pullDownEl && !pullDownEl.className.match('flip')) {
+					if ($('#iscrollwrapper ul > li').length >= items_per_page) {
+						if (this.y >= 5 && pullDownEl && !pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown flip';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to add new entry';
 							this.minScrollY = 0;
-						} else if (this.y <= 50 && pullDownEl && pullDownEl.className.match('flip')) {
+						} else if (this.y <= 5 && pullDownEl && pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to add new entry';
 							this.minScrollY = -pullDownOffset;
@@ -381,7 +288,7 @@
 					setTimeout(function() {
 						scroll_in_progress = false;
 					}, 100);
-					if ($('#wrapper ul > li').length >= items_per_page) {
+					if ($('#iscrollwrapper ul > li').length >= items_per_page) {
 						if (pullDownEl && pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown loading';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';
@@ -394,7 +301,7 @@
 				
 				// In order to prevent seeing the "pull down to refresh" before the iScoll is trigger - the wrapper is located at left:-9999px and returned to left:0 after the iScoll is initiated
 				setTimeout(function() {
-					$('#wrapper').css({left:0});
+					$('#iscrollwrapper').css({left:0});
 				}, 100);
 			}
 			
@@ -447,42 +354,15 @@
 			overflow: hidden; /* this is important to prevent the whole page to bounce */
 		}
 		
-		#header {
-			position: absolute;
-			z-index: 2;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 45px;
-			line-height: 45px;
-			background: #CD235C;
-			padding: 0;
-			color: #eee;
-			font-size: 20px;
-			text-align: center;
-			font-weight: bold;
-		}
 		
-		#footer {
-			position: absolute;
-			z-index: 2;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 48px;
-			background: #444;
-			padding: 0;
-			border-top: 1px solid #444;
-		}
-		
-		#wrapper {
+		#iscrollwrapper {
 			position: absolute;
 			z-index: 1;
-			top: 0px;
+			top: 34px;
 			bottom: 48px;
 			left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
 			width: 100%;
-			background: #CD235C;
+			background: #ccc;
 			overflow: hidden;
 		}
 		
@@ -557,28 +437,19 @@
 	
 	<div data-role="page" id="home">
 		
-		<!-- panel -->
-		<div data-role="panel" id="mypanel">
-	        <!-- panel content goes here -->
-	    </div>
-		
 		<!-- header -->
 	    <div data-role="header" data-theme="b" data-position="fixed" data-id="homeheader" id="homeheader">
-	      <!--  <a href="#home" data-icon="home" data-iconpos="notext">Home</a> -->
-	      <a href="#mypanel" data-icon="grid" data-iconpos="notext">Panel</a>
 	      <h1>locationTag</h1>
 	    </div>
     	
     	<!-- content -->
     	<div data-role="content">
-      		<!--  <input id="button1" type="button" data-role="button" data-icon="grid" value="Button">
-      		<div id="result"></div> --> 
       				
       				<div style="display:none" id="addnewwrapper">
       					<input type="text" name="name" id="addnewinput" value="">
       				</div>
       				
-		      		<div style="" id="wrapper" data-iscroll>
+		      		<div style="" id="iscrollwrapper" data-iscroll>
 						<div style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, -83px) translateZ(0px);" id="scroller">
 							<div class="pullDown">
 								<span class="pullDownIcon">&nbsp;</span>
@@ -588,26 +459,11 @@
 							<div class="pullUp"></div>
 						</div>
 					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="position: absolute; z-index: 9999; width: 7px; bottom: 2px; top: 2px; right: 1px; overflow: hidden; pointer-events: none; transform: translateZ(0px); transition-duration: 500ms; opacity: 0;"><div class="iScrollIndicator" style="box-sizing: border-box; position: absolute; background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 3px; width: 100%; transition-duration: 0ms; display: block; height: 250px; transform: translate(0px, 24px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);"></div></div></div>
-					
-
-			         
-    </div>
-			
-      		
+    
+    
+		    </div>
     	</div>
     	
-    	<!-- footer -->
-    	<div data-role="footer" data-theme="b" data-position="fixed" data-id="homefooter">
-        <!--<div data-role="navbar">
-	            <ul>
-	                <li><a href="#about">page2</a></li>
-	                <li><a href="#about">page3</a></li>
-	            </ul>
-        	</div> -->
-    	</div>
-    	
-    </div>
-
 
 </body>
 </html>
