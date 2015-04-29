@@ -118,12 +118,14 @@
 						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
 						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
 						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
-						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
-						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
-						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
-						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
-						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
 						
+						/*
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						$('#iscrollwrapper > #scroller > ul').append('<li>First...</li>');
+						*/
 						
 					} else if (refresh && !next_page) {
 						// Refreshing the content
@@ -161,7 +163,7 @@
 						pullActionCallback();
 						
 					} else {
-						
+
 						if (myScroll) {
 							myScroll.destroy();
 							$(myScroll.scroller).attr('style', ''); // Required since the styles applied by IScroll might conflict with transitions of parent layers.
@@ -195,6 +197,7 @@
 					callback();
 				}
 			}
+			
 			function pullActionCallback() {
 				if (pullDownEl && pullDownEl.className.match('loading')) {
 					
@@ -231,12 +234,14 @@
 			}
 			
 			function trigger_myScroll(offset) {
+				
 				pullDownEl = document.querySelector('#iscrollwrapper .pullDown');
 				if (pullDownEl) {
 					pullDownOffset = pullDownEl.offsetHeight;
 				} else {
 					pullDownOffset = 0;
 				}
+				
 				pullUpEl = document.querySelector('#iscrollwrapper .pullUp');	
 				if (pullUpEl) {
 					pullUpOffset = pullUpEl.offsetHeight;
@@ -249,9 +254,11 @@
 					$('#iscrollwrapper .pullDown').hide();
 					$('#iscrollwrapper .pullUp span').hide();
 					offset = 0;
+					
 				} else if (!offset) {
 					// If we have more than 1 page of results and offset is not manually defined - we set it to be the pullUpOffset.
 					offset = pullUpOffset;
+					
 				}
 				
 				myScroll = new IScroll('#iscrollwrapper', {
@@ -360,7 +367,8 @@
 			z-index: 1;
 			top: 34px;
 			bottom: 48px;
-			left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
+			/* left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
+			left:0px;
 			width: 100%;
 			background: #ccc;
 			overflow: hidden;
