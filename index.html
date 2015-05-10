@@ -69,7 +69,7 @@
 		    		var lhref = "<a href=\"#\" onclick=\"window.open('" + lurl + "', '_system');\">" + ivalue + "</a>";
 		    		console.log(lhref);
 		    		
-		    		$('#wrapper > #scroller > ul').prepend('<li>' + lhref + '</li>');
+		    		$('#wrapper > #scroller > ul').prepend('<li>' + lhref + '&nbsp Auf ' + position.coords.accuracy + ' Meter genau.</li>');
 		    		
 		    		$('#addnewinput').val('');
 		    		$('#addnewwrapper').hide();
@@ -175,6 +175,9 @@
 						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>'); */
 						
 					} else if (refresh && next_page) {
+						
+						/*
+						
 						// Loading the next-page content and refreshing
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
@@ -188,6 +191,8 @@
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
+						
+						*/
 					}
 				
 					if (refresh) {
@@ -244,6 +249,7 @@
 					
 				}
 			}
+			
 			
 			var pullActionDetect = {
 				count:0,
