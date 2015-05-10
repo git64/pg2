@@ -112,6 +112,10 @@
 				console.log(refresh, next_page);
 					if (!refresh) {
 						// Loading the initial content
+						
+						$('#datalist').html(localStorage.getItem("list"));
+						
+						/*
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
@@ -121,7 +125,8 @@
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>'); */
+						
 					} else if (refresh && !next_page) {
 						// Refreshing the content
 						
