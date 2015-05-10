@@ -113,9 +113,28 @@
 					if (!refresh) {
 						// Loading the initial content
 						
-						$('#datalist').html(localStorage.getItem("list"));
+						console.log(localStorage.getItem("list"));
+						
+						if (!localStorage.getItem("list")) {
+							
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
+							
+						}else{
+							$('#datalist').html(localStorage.getItem("list"));
+						}
+						
 						
 						/*
+						$('#datalist').html(localStorage.getItem("list"))
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
