@@ -110,31 +110,9 @@
 				// Here you should place your AJAX request to fetch the relevant content (e.g. $.post(...))
 				
 				console.log(refresh, next_page);
+				setTimeout(function() { // This immitates the CALLBACK of your AJAX function
 					if (!refresh) {
 						// Loading the initial content
-						
-						console.log(localStorage.getItem("list"));
-						
-						if (!localStorage.getItem("list")) {
-							
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-							
-						}else{
-							$('#datalist').html(localStorage.getItem("list"));
-						}
-						
-						
-						/*
-						$('#datalist').html(localStorage.getItem("list"))
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
@@ -144,20 +122,9 @@
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>'); */
-						
+						$('#wrapper > #scroller > ul').append('<li>Pretty row initial content</li>');
 					} else if (refresh && !next_page) {
 						// Refreshing the content
-						
-						console.log('Refreshing the content');
-						
-						$("#wrapper").css({ top: '100px' });
-						$('#addnewwrapper').show();
-						$('#addnewinput').focus();
-						
-						console.log('Datalist:' + $('#datalist').html());
-						
-						/*
 						$('#wrapper > #scroller > ul').html('');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
@@ -172,12 +139,8 @@
 						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
-						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>'); */
-						
+						$('#wrapper > #scroller > ul').append('<li>Pretty row Refreshed</li>');
 					} else if (refresh && next_page) {
-						
-						/*
-						
 						// Loading the next-page content and refreshing
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
@@ -191,8 +154,6 @@
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
 						$('#wrapper > #scroller > ul').append('<li>Pretty row X</li>');
-						
-						*/
 					}
 				
 					if (refresh) {
@@ -210,7 +171,7 @@
 						trigger_myScroll();
 						
 					}
-				
+				}, 1000);
 				
 			};
 			
@@ -249,7 +210,6 @@
 					
 				}
 			}
-			
 			
 			var pullActionDetect = {
 				count:0,
@@ -353,8 +313,7 @@
 			}
 			
 			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-			document.addEventListener("pause", onPause, false);
-			document.addEventListener("resume", onResume, false);
+			
 	     
 	    
 		/* </iscroll>
@@ -362,7 +321,8 @@
 	     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 	 
-	 
+	     document.addEventListener("pause", onPause, false);
+		 document.addEventListener("resume", onResume, false);
  		
 	     function onPause() {
 	    	 localStorage.setItem("list", $('#datalist').html());
@@ -400,14 +360,40 @@
 			overflow: hidden; /* this is important to prevent the whole page to bounce */
 		}
 		
+		#header {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 45px;
+			line-height: 45px;
+			background: #CD235C;
+			padding: 0;
+			color: #eee;
+			font-size: 20px;
+			text-align: center;
+			font-weight: bold;
+		}
+		
+		#footer {
+			position: absolute;
+			z-index: 2;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 48px;
+			background: #444;
+			padding: 0;
+			border-top: 1px solid #444;
+		}
 		
 		#wrapper {
 			position: absolute;
 			z-index: 1;
-			top: 34px;
+			top: 45px;
 			bottom: 48px;
-			/* left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
-			left:0px;
+			left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
 			width: 100%;
 			background: #ccc;
 			overflow: hidden;
