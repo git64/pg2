@@ -171,7 +171,7 @@
 						trigger_myScroll();
 						
 					}
-				}, 1000);
+				}, 0);
 				
 			};
 			
@@ -211,6 +211,7 @@
 				}
 			}
 			
+			/*
 			var pullActionDetect = {
 				count:0,
 				limit:10,
@@ -229,7 +230,7 @@
 						}
 					}, 200);
 				}
-			}
+			}*/
 			
 			function trigger_myScroll(offset) {
 				pullDownEl = document.querySelector('#wrapper .pullDown');
@@ -247,8 +248,8 @@
 				
 				if ($('#wrapper ul > li').length < items_per_page) {
 					// If we have only 1 page of result - we hide the pullup and pulldown indicators.
-					$('#wrapper .pullDown').hide();
-					$('#wrapper .pullUp span').hide();
+					//$('#wrapper .pullDown').hide();
+					//$('#wrapper .pullUp span').hide();
 					offset = 0;
 				} else if (!offset) {
 					// If we have more than 1 page of results and offset is not manually defined - we set it to be the pullUpOffset.
@@ -264,16 +265,17 @@
 				myScroll.on('scrollStart', function () {
 					scroll_in_progress = true;
 				});
+				
 				myScroll.on('scroll', function () {
 					
 					scroll_in_progress = true;
 					
 					if ($('#wrapper ul > li').length >= items_per_page) {
-						if (this.y >= 5 && pullDownEl && !pullDownEl.className.match('flip')) {
+						if (this.y >= 10 && pullDownEl && !pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown flip';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh';
 							this.minScrollY = 0;
-						} else if (this.y <= 5 && pullDownEl && pullDownEl.className.match('flip')) {
+						} else if (this.y <= 10 && pullDownEl && pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh';
 							this.minScrollY = -pullDownOffset;
@@ -284,11 +286,13 @@
 						
 					}
 				});
+				
 				myScroll.on('scrollEnd', function () {
 					console.log('scroll ended');
 					setTimeout(function() {
 						scroll_in_progress = false;
 					}, 100);
+					
 					if ($('#wrapper ul > li').length >= items_per_page) {
 						if (pullDownEl && pullDownEl.className.match('flip')) {
 							pullDownEl.className = 'pullDown loading';
