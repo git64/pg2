@@ -50,11 +50,13 @@
 		    		
 		    		console.log('Refreshing the content - onSuccess');
 		    		
-		    		var lurl = "http://www.openstreetmap.org/?mlat=" + position.coords.latitude + "&mlon=" + position.coords.longitude;
-		    		var lhref = "<a href=\"#\" onclick=\"window.open('" + lurl + "', '_system');\">" + ivalue + "</a>";
+		    		var lOpenStreetMapUrl = "http://www.openstreetmap.org/?mlat=" + position.coords.latitude + "&mlon=" + position.coords.longitude;
+		    		var lGoogleMapsUrl = "http://www.google.com/maps/place/" + position.coords.latitude + "," + position.coords.longitude;
+		    		
+		    		var lhref = "<a href=\"#\" onclick=\"window.open('" + lGoogleMapsUrl + "', '_system');\">" + ivalue + "</a>";
 		    		console.log(lhref);
 		    		
-		    		$('#wrapper > #scroller > ul').prepend('<li>' + lhref + '&nbsp Auf ' + position.coords.accuracy + ' Meter genau.</li>');
+		    		$('#wrapper > #scroller > ul').prepend('<li><div>' + lhref + '</div><div>Auf ' + position.coords.accuracy + ' Meter genau. // ' + GetTimeStampString() + '</div></li>');
 		    		localStorage.setItem("list", $('#datalist').html());
 		    		
 		    		$('#addnewinput').val('');
@@ -81,6 +83,18 @@
 	    });
 	    
  }	    
+ 
+ 		
+ 	function GetTimeStampString() {
+		 
+ 		var lDate = new Date();
+ 		var lMonth = lDate.getMonth() + 1
+ 		
+ 		var lResult = lDate.getDate() + '.' + lMonth + '.' + lDate.getFullYear() + ' ' + lDate.getHours() + ':' + lDate.getMinutes() + ':' + lDate.getSeconds();
+ 		
+ 		return lResult;
+ 		
+ 	}
  
  
  
@@ -292,7 +306,7 @@
 						}
 						
 						console.log(this.y);
-						pullActionDetect.check(0);
+						//pullActionDetect.check(0);
 						
 					}
 				});
@@ -310,7 +324,7 @@
 							pullDownAction();
 						}
 						// We let the momentum scroll finish, and if reached the end - loading the next page
-						pullActionDetect.check(0);
+						//pullActionDetect.check(0);
 					}
 				});
 				
@@ -445,9 +459,9 @@
 		}
 		
 		#scroller li {
-			padding: 0 10px;
+			padding: 20px 10px;
 			height: 80px;
-			line-height: 80px;
+			/* line-height: 80px; */
 			border-bottom: 1px solid #ccc;
 			border-top: 1px solid #fff;
 			background-color: #fafafa;
