@@ -71,12 +71,20 @@
 	 
 	 
 	 $(document).on('swipedown', '#content', function () {
-		    alert("swipedown..");
+		    
+		 	//alert("swipedown..");
+		    $('#homeheader').append("swipedown");
+		    $('#homeheader').append($(".ui-first-child").offset().top);
+		    
+		    //$('ul li:first-child').offset().top
+		    
+		    
 		});
 	 
+	 /*
 		$(document).on('swipeup', '#content', function () {
 		    alert("swipeup..");
-		});
+		}); */
 	 
 	 
 	 
@@ -111,7 +119,7 @@
     	<!-- content -->
     	<div id="content" data-role="content">
       			
-      			<ul id="datalist" class="ui-listview" data-role="listview">
+      			<ul style="margin-top:50px" id="datalist" class="ui-listview" data-role="listview">
 					
 					
 				</ul>
