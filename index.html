@@ -20,8 +20,11 @@
 <!-- Libraries -->
 <script type="text/javascript" src="libs/jquery-2.1.3.js"></script>
 
+
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>		
+
+<script type="text/javascript" src="libs/jquerymobile-swipeupdown.js"></script>
 
 <!-- Stylesheets -->
 <!--<link type='text/css' rel='stylesheet' href='css/dd.ui.application.css'>-->
@@ -32,6 +35,7 @@
  <script>
  
  $(document).on("pagecreate", "#home", onDeviceReady);
+ 
  
  function onDeviceReady(event, ui) {
 	 
@@ -53,13 +57,30 @@
 			
 		}else{
 			
+			//$('#datalist').append('<li>hello</li>').listview('refresh');
+			
 			//console.log(localStorage.getItem("list"));
-			//$('#datalist').html(localStorage.getItem("list"));
+			$('#datalist').html(localStorage.getItem("list")).listview('refresh');
+			
+			
 			
 			//$('#datalist').html("<li>initial content</li><li>initial content</li><li>initial content</li>");
 			
 			
 		}
+	 
+	 
+	 $(document).on('swipedown', '#content', function () {
+		    alert("swipedown..");
+		});
+	 
+		$(document).on('swipeup', '#content', function () {
+		    alert("swipeup..");
+		});
+	 
+	 
+	 
+	 
 	 
 	 
 }
@@ -88,94 +109,10 @@
 	    </div>
     	
     	<!-- content -->
-    	<div data-role="content">
+    	<div id="content" data-role="content">
       			
       			<ul id="datalist" class="ui-listview" data-role="listview">
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
-					<li>initial content</li>
+					
 					
 				</ul>
       			
