@@ -5,6 +5,10 @@
 	<description>locationTag</description>
 	
 	<author href="https://github.com/git64/pg2" email="github2@ezisonline.de">DannDann</author>
+		
+	<feature name="Geolocation">
+    	<param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+	</feature>
 	
 	<!-- <feature name="http://api.phonegap.com/1.0/device" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
@@ -36,7 +40,7 @@
 	<!--  <gap:plugin name="org.apache.cordova.vibration" />  -->
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
 	
-	<!-- <access origin="whatsapp:*" launch-external="yes" /> -->
+	<!--  <access origin="whatsapp:*" launch-external="yes" /> -->
 	
 	<!-- <gap:plugin name="org.apache.cordova.file" /> -->
 	<!-- <gap:plugin name="org.apache.cordova.file-transfer" /> -->
