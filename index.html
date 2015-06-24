@@ -56,7 +56,7 @@
 		    		var lhref = "<a href=\"#\" onclick=\"window.open('" + lGoogleMapsUrl + "', '_system');\">" + ivalue + "</a>";
 		    		console.log(lhref);
 		    		
-		    		$('#wrapper > #scroller > ul').prepend('<li><div>' + lhref + '</div><div>Auf ' + position.coords.accuracy + ' Meter genau. // ' + GetTimeStampString() + '</div><div> <a href="whatsapp://send?text=Test 1"> </div></li>');
+		    		$('#wrapper > #scroller > ul').prepend('<li><div>' + lhref + '</div><div>Auf ' + position.coords.accuracy + ' Meter genau. // ' + GetTimeStampString() + '</div></li>');
 		    		localStorage.setItem("list", $('#datalist').html());
 		    		
 		    		$('#addnewinput').val('');
