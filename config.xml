@@ -38,7 +38,7 @@
 	<gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
 	
-	
+	<access origin="whatsapp:*" launch-external="yes" />
 	
 	<!-- <gap:plugin name="org.apache.cordova.file" /> -->
 	<!-- <gap:plugin name="org.apache.cordova.file-transfer" /> -->
