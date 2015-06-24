@@ -28,14 +28,16 @@
 	<gap:splash src="splash.png" />
 	<!-- <preference name="auto-hide-splash-screen" value="false" /> -->
 	<!-- <preference name="splash-screen-duration" value="3000" />  --> 
-
-	<preference name="phonegap-version" value="3.7.0" />
+	
+	<preference name='phonegap-version' value='cli-5.1.1' />
+	
+	<!-- <preference name="phonegap-version" value="3.7.0" /> -->
 	
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="org.apache.cordova.splashscreen" />
 	<gap:plugin name="org.apache.cordova.geolocation" />
 	<gap:plugin name="org.apache.cordova.dialogs" />
-	<gap:plugin name="org.apache.cordova.vibration" />
+	<!--  <gap:plugin name="org.apache.cordova.vibration" />  -->
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
 	
 	<access origin="whatsapp:*" launch-external="yes" />
