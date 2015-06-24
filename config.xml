@@ -5,10 +5,6 @@
 	<description>locationTag</description>
 	
 	<author href="https://github.com/git64/pg2" email="github2@ezisonline.de">DannDann</author>
-		
-	<feature name="Geolocation">
-    	<param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
-	</feature>
 	
 	<!-- <feature name="http://api.phonegap.com/1.0/device" /> -->
 	<!-- <feature name="http://api.phonegap.com/1.0/battery" /> -->
@@ -29,7 +25,7 @@
 	<!-- <preference name="auto-hide-splash-screen" value="false" /> -->
 	<!-- <preference name="splash-screen-duration" value="3000" />  --> 
 	
-	<!-- <preference name='phonegap-version' value='cli-5.1.1' /> -->
+	<preference name='phonegap-version' value='cli-5.1.1' />
 	
 	<!-- <preference name="phonegap-version" value="3.7.0" /> -->
 	
