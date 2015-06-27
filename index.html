@@ -201,21 +201,8 @@
 				$('#wrapper > .scroller').css({top:0});
 				
 			}
-			function pullUpAction(callback) {
-				/*
-				if ($('#wrapper > #scroller > ul').data('page')) {
-					var next_page = parseInt($('#wrapper > #scroller > ul').data('page'), 10) + 1;
-				} else {
-					var next_page = 2;
-				}
-				load_content('refresh', next_page);
-				$('#wrapper > #scroller > ul').data('page', next_page);
-				
-				if (callback) {
-					callback();
-				}
-				*/
-			}
+			
+			
 			function pullActionCallback() {
 				if (pullDownEl && pullDownEl.className.match('loading')) {
 					
@@ -231,28 +218,9 @@
 				}
 			}
 			
-			/*
-			var pullActionDetect = {
-				count:0,
-				limit:10,
-				check:function(count) {
-					if (count) {
-						pullActionDetect.count = 0;
-					}
-					// Detects whether the momentum has stopped, and if it has reached the end - 200px of the scroller - it trigger the pullUpAction
-					setTimeout(function() {
-						if (myScroll.y <= (myScroll.maxScrollY + 200) && pullUpEl && !pullUpEl.className.match('loading')) {
-							$('.pullUp').addClass('loading').html('<span class="pullUpIcon">&nbsp;</span><span class="pullUpLabel">Loading...</span>');
-							pullUpAction();
-						} else if (pullActionDetect.count < pullActionDetect.limit) {
-							pullActionDetect.check();
-							pullActionDetect.count++;
-						}
-					}, 200);
-				}
-			}*/
 			
 			function trigger_myScroll(offset) {
+				
 				pullDownEl = document.querySelector('#wrapper .pullDown');
 				if (pullDownEl) {
 					pullDownOffset = pullDownEl.offsetHeight;
@@ -264,18 +232,11 @@
 					pullUpOffset = pullUpEl.offsetHeight;
 				} else {
 					pullUpOffset = 0;
+					
+					
 				}
 				
-				if ($('#wrapper ul > li').length < items_per_page) {
-					// If we have only 1 page of result - we hide the pullup and pulldown indicators.
-					$('#wrapper .pullDown').hide();
-					
-					$("#wrapper").css({ top: '100px' });
-					$('#addnewwrapper').show();
-					
-					//$('#wrapper .pullUp span').hide();
-					offset = 0;
-				} else if (!offset) {
+				if (!offset) {
 					// If we have more than 1 page of results and offset is not manually defined - we set it to be the pullUpOffset.
 					offset = pullUpOffset;
 				}
@@ -284,10 +245,16 @@
 					probeType:1, tap:true, click:false, preventDefaultException:{tagName:/.*/}, mouseWheel:true, scrollbars:true, fadeScrollbars:true, interactiveScrollbars:false, keyBindings:false,
 					deceleration:0.0002,
 					startY:(parseInt(offset)*(-1))
+					
+					
+					
 				});
+				
+				console.log(parseInt(offset)*(-1));
 				
 				myScroll.on('scrollStart', function () {
 					scroll_in_progress = true;
+					console.log('scrollStart');
 				});
 				
 				myScroll.on('scroll', function () {
@@ -295,11 +262,21 @@
 					scroll_in_progress = true;
 					
 					if ($('#wrapper ul > li').length >= items_per_page) {
-						if (this.y >= 10 && pullDownEl && !pullDownEl.className.match('flip')) {
+						
+						//console.log('top?' + $('#wrapper ul > li').length);
+						
+						if (this.y >= 40) {
+							
+							console.log('refreshStretch');
+							
 							pullDownEl.className = 'pullDown flip';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh';
 							this.minScrollY = 0;
-						} else if (this.y <= 10 && pullDownEl && pullDownEl.className.match('flip')) {
+						} else if (this.y <= 30 ) {
+							
+							
+							console.log('<= 10?');
+							
 							pullDownEl.className = 'pullDown';
 							pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh';
 							this.minScrollY = -pullDownOffset;
@@ -311,11 +288,19 @@
 					}
 				});
 				
+				
+				
 				myScroll.on('scrollEnd', function () {
 					console.log('scroll ended');
+					
+					if (this.y > -40) {
+						this.scrollTo(0, -40);	
+					}
+					
 					setTimeout(function() {
 						scroll_in_progress = false;
 					}, 100);
+					
 					
 					if ($('#wrapper ul > li').length >= items_per_page) {
 						if (pullDownEl && pullDownEl.className.match('flip')) {
@@ -326,12 +311,18 @@
 						// We let the momentum scroll finish, and if reached the end - loading the next page
 						//pullActionDetect.check(0);
 					}
+					
+					
 				});
 				
 				// In order to prevent seeing the "pull down to refresh" before the iScoll is trigger - the wrapper is located at left:-9999px and returned to left:0 after the iScoll is initiated
+				
+				/*
 				setTimeout(function() {
 					$('#wrapper').css({left:0});
 				}, 100);
+				*/
+				
 			}
 			
 			function loaded() {
@@ -422,7 +413,8 @@
 			z-index: 1;
 			top: 45px;
 			bottom: 0px;
-			left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
+			left:0px;
+			/* left:9999px; /* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
 			width: 100%;
 			background: #ccc;
 			overflow: hidden;
@@ -520,9 +512,12 @@
 							<ul id="datalist" data-role="listview" ></ul>
 							<div class="pullUp"></div>
 						</div>
-					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="position: absolute; z-index: 9999; width: 7px; bottom: 2px; top: 2px; right: 1px; overflow: hidden; pointer-events: none; transform: translateZ(0px); transition-duration: 500ms; opacity: 0;"><div class="iScrollIndicator" style="box-sizing: border-box; position: absolute; background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 3px; width: 100%; transition-duration: 0ms; display: block; height: 250px; transform: translate(0px, 24px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);"></div></div></div>
-    
-    
+					
+					
+					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="position: absolute; z-index: 9999; width: 7px; bottom: 2px; top: 2px; right: 1px; overflow: hidden; pointer-events: none; transform: translateZ(0px); transition-duration: 500ms; opacity: 0;"><div class="iScrollIndicator" style="box-sizing: border-box; position: absolute; background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 3px; width: 100%; transition-duration: 0ms; display: block; height: 250px; transform: translate(0px, 24px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);"></div></div>
+				
+				   </div>
+   
 		    </div>
     	</div>
     	

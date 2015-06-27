@@ -13,6 +13,9 @@ module dd {
             console.log("test");
             console.log(window.isDeviceReady);
             
+             
+            
+            
             if (!window.isDeviceReady) {
                 
                 console.log("addEventListener");
